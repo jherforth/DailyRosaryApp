@@ -1,17 +1,57 @@
-// DAILY ROSARY PEBBLE APP BY JASON HERFORTH
-// 2016-02-12
+// CATHORIST PEBBLE APP BY JASON HERFORTH
+// 2016-02-
 // V1.0
 
-//BLANK CANVAS
+//LET'S GET THIS PARTY STARTED
+var UI = require('ui');
 var Vector2 = require('vector2');
+
+var bgcolor = '#AA0000';
+var txtcolor = 'white';
+
+//SPLASH SCREEN
+var splashScreen = new UI.Card({ 
+  title: 'Cathorist',
+  banner: 'images/rosary.png',
+  body: 'Press SELECT to continue',
+  textAlign: 'center'
+  });
+
+splashScreen.show();
+
+splashScreen.on('click', 'select', function(e) {
+//MAIN MENU
+var mainMenu = new UI.Menu({
+  backgroundColor: '#00AAFF',
+  textColor: 'black',
+  highlightBackgroundColor: 'FFAA00',
+  highlightTextColor: 'white',
+    sections: [{
+      items: [
+        { title: 'The Rosary', subtitle: 'Today\'s Mysteries' }, 
+        { title: '$RequesterAddress', subtitle: 'get the ip' }]
+    }]
+  });
+
+  mainMenu.show();
+
+  mainMenu.on('select', function(e) {
+    switch(e.itemIndex) {
+      case 0: rosary.on('click', 'select', function() {rosary.show(); }); break;
+      case 1: displayResults( base + 'address', '$RequesterAddress' ); break;
+      default: 
+        console.log('e.itemIndex is out of bounds: ' + e.itemIndex);
+    } 
+ });
+});
+
+//BLANK CANVAS
 var day1 ="";
 var day2 ="";
 var day3 ="";
 var day4 ="";
 var day5 ="";
 var mystery ="";
-var bgcolor = '#AA0000';
-var txtcolor = 'white';
 
 //MYSTERIES TEXT
 var glorious1 = "I. Resurrection of Jesus Christ";
@@ -107,8 +147,7 @@ switch (new Date().getDay()) {
 }
 
 //MEAT AND POTATOES
-var UI = require('ui');
-var wind = new UI.Window({ 
+var rosary = new UI.Window({ 
   fullscreen: true, 
   backgroundColor: bgcolor, 
   scrollable: true 
@@ -278,25 +317,24 @@ var vcross = new UI.Rect({
   backgroundColor: 'white'
 });
 
-wind.add(title);
-wind.add(tlbead);
-wind.add(trbead);
-wind.add(brbead);
-wind.add(blbead);
-wind.add(cbead);
-wind.add(tbead1);
-wind.add(tbead2);
-wind.add(rbead1);
-wind.add(rbead2);
-wind.add(lbead1);
-wind.add(lbead2);
-wind.add(bbead1);
-wind.add(bbead2);
-wind.add(hcross);
-wind.add(vcross);
-wind.add(meditation1);
-wind.add(meditation2);
-wind.add(meditation3);
-wind.add(meditation4);
-wind.add(meditation5);
-wind.show();
+rosary.add(title);
+rosary.add(tlbead);
+rosary.add(trbead);
+rosary.add(brbead);
+rosary.add(blbead);
+rosary.add(cbead);
+rosary.add(tbead1);
+rosary.add(tbead2);
+rosary.add(rbead1);
+rosary.add(rbead2);
+rosary.add(lbead1);
+rosary.add(lbead2);
+rosary.add(bbead1);
+rosary.add(bbead2);
+rosary.add(hcross);
+rosary.add(vcross);
+rosary.add(meditation1);
+rosary.add(meditation2);
+rosary.add(meditation3);
+rosary.add(meditation4);
+rosary.add(meditation5);
