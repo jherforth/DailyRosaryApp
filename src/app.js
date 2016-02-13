@@ -97,6 +97,10 @@ switch (new Date().getDay()) {
         break;
     case 6:
         day1 = joyful1;
+        day2 = joyful2;
+        day3 = joyful3;
+        day4 = joyful4;
+        day5 = joyful5;
         bgcolor = '#55AA00';
         mystery = "JOYFUL";
         break;
