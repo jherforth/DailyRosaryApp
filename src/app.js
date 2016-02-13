@@ -55,7 +55,7 @@ switch (new Date().getDay()) {
         day3 = joyful3;
         day4 = joyful4;
         day5 = joyful5;
-        bgcolor = '#55AA00';
+        bgcolor = '#005500';
         mystery = "JOYFUL";
         break;
     case 2:
@@ -101,7 +101,7 @@ switch (new Date().getDay()) {
         day3 = joyful3;
         day4 = joyful4;
         day5 = joyful5;
-        bgcolor = '#55AA00';
+        bgcolor = '#005500';
         mystery = "JOYFUL";
         break;
 }
