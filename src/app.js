@@ -10,19 +10,82 @@ var bgcolor = '#AA0000';
 var txtcolor = 'white';
 
 //SPLASH SCREEN
-var splashScreen = new UI.Card({ 
-  title: 'Cathorist',
-  banner: 'images/rosary.png',
-  body: 'Press SELECT to continue',
-  textAlign: 'center'
+var splashScreen = new UI.Window({ 
+  fulscreen: true,
+  backgroundColor: '#0055AA'
   });
 
+//SPLASH SCREEN FORMATED TEXT
+var splashScreenTitle1 = new UI.Text({
+ position: new Vector2(0, 0),
+ size: new Vector2(144, 168),
+ font: 'gothic-24-bold',
+ text: "CATHORIST",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var splashScreenTitle2 = new UI.Text({
+ position: new Vector2(0, 0),
+ size: new Vector2(144, 168),
+ font: 'gothic-18-bold',
+ text: "Wrist Worn Catholic Spiritual Guide.",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var splashScreenTitle3 = new UI.Text({
+ position: new Vector2(0, 0),
+ size: new Vector2(144, 168),
+ font: 'gothic-14',
+ text: "2016 Candidly.Us/Cathorist",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+//POSITION TEXT ON THE SPLASH SCREEN
+var titlePos1 = splashScreenTitle1.position();
+  titlePos1.y += 5;
+  splashScreenTitle1.position(titlePos1);
+
+var titlePos2 = splashScreenTitle2.position();
+  titlePos2.y += 70;
+  splashScreenTitle2.position(titlePos2);
+
+var titlePos3 = splashScreenTitle3.position();
+  titlePos3.y += 115;
+  splashScreenTitle3.position(titlePos3);
+
+//TITLE CROSS IMAGE COMPONENTS
+var titleCrossH = new UI.Rect({
+  position: new Vector2(62,43),
+  size: new Vector2(22,8),
+  backgroundColor: 'white'
+});
+var titleCrossV = new UI.Rect({
+  position: new Vector2(69,36),
+  size: new Vector2(8,30),
+  backgroundColor: 'white'
+});
+
+splashScreen.add(titleCrossH);
+splashScreen.add(titleCrossV);
+splashScreen.add(splashScreenTitle1);
+splashScreen.add(splashScreenTitle2);
+splashScreen.add(splashScreenTitle3);
 splashScreen.show();
+
+//ROSARY SCREEN
+var rosary = new UI.Window({ 
+  fullscreen: true, 
+  backgroundColor: bgcolor, 
+  scrollable: true 
+});
 
 splashScreen.on('click', 'select', function(e) {
 //MAIN MENU
 var mainMenu = new UI.Menu({
-  backgroundColor: '#00AAFF',
+  backgroundColor: '#0055AA',
   textColor: 'black',
   highlightBackgroundColor: 'FFAA00',
   highlightTextColor: 'white',
@@ -95,7 +158,7 @@ switch (new Date().getDay()) {
         day3 = joyful3;
         day4 = joyful4;
         day5 = joyful5;
-        bgcolor = '#55AA00';
+        bgcolor = '#005500';
         mystery = "JOYFUL";
         break;
     case 2:
@@ -141,22 +204,16 @@ switch (new Date().getDay()) {
         day3 = joyful3;
         day4 = joyful4;
         day5 = joyful5;
-        bgcolor = '#55AA00';
+        bgcolor = '#005500';
         mystery = "JOYFUL";
         break;
 }
 
-//MEAT AND POTATOES
-var rosary = new UI.Window({ 
-  fullscreen: true, 
-  backgroundColor: bgcolor, 
-  scrollable: true 
-});
-
-var title = new UI.Text({
+//DAILY ROSARY TITLE
+var dailyRosary = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18-bold',
+ font: 'gothic-24-bold',
  text: mystery,
  textAlign: 'center',
  color: txtcolor
@@ -166,7 +223,7 @@ var title = new UI.Text({
 var meditation1 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18',
+ font: 'gothic-18-bold',
  text: day1,
  textAlign: 'center',
  color: txtcolor
@@ -175,7 +232,7 @@ position: new Vector2(0, 0),
 var meditation2 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18',
+ font: 'gothic-18-bold',
  text: day2,
  textAlign: 'center',
  color: txtcolor
@@ -184,7 +241,7 @@ position: new Vector2(0, 0),
 var meditation3 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18',
+ font: 'gothic-18-bold',
  text: day3,
  textAlign: 'center',
  color: txtcolor
@@ -193,7 +250,7 @@ position: new Vector2(0, 0),
 var meditation4 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18',
+ font: 'gothic-18-bold',
  text: day4,
  textAlign: 'center',
  color: txtcolor
@@ -202,7 +259,7 @@ position: new Vector2(0, 0),
 var meditation5 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18',
+ font: 'gothic-18-bold',
  text: day5,
  textAlign: 'center',
  color: txtcolor
@@ -317,7 +374,7 @@ var vcross = new UI.Rect({
   backgroundColor: 'white'
 });
 
-rosary.add(title);
+rosary.add(dailyRosary);
 rosary.add(tlbead);
 rosary.add(trbead);
 rosary.add(brbead);
