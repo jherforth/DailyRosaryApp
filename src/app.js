@@ -75,40 +75,16 @@ splashScreen.add(splashScreenTitle2);
 splashScreen.add(splashScreenTitle3);
 splashScreen.show();
 
-//ROSARY SCREEN
+//ROSARY 
+//SCREEN
+//START
 var rosary = new UI.Window({ 
   fullscreen: true, 
   backgroundColor: bgcolor, 
   scrollable: true 
 });
 
-splashScreen.on('click', 'select', function(e) {
-//MAIN MENU
-var mainMenu = new UI.Menu({
-  backgroundColor: '#0055AA',
-  textColor: 'black',
-  highlightBackgroundColor: 'FFAA00',
-  highlightTextColor: 'white',
-    sections: [{
-      items: [
-        { title: 'The Rosary', subtitle: 'Today\'s Mysteries' }, 
-        { title: '$RequesterAddress', subtitle: 'get the ip' }]
-    }]
-  });
-
-  mainMenu.show();
-
-  mainMenu.on('select', function(e) {
-    switch(e.itemIndex) {
-      case 0: rosary.on('click', 'select', function() {rosary.show(); }); break;
-      case 1: displayResults( base + 'address', '$RequesterAddress' ); break;
-      default: 
-        console.log('e.itemIndex is out of bounds: ' + e.itemIndex);
-    } 
- });
-});
-
-//BLANK CANVAS
+//ROSARY COMPONENT BLANK VARIABLES
 var day1 ="";
 var day2 ="";
 var day3 ="";
@@ -267,109 +243,109 @@ position: new Vector2(0, 0),
 
 //POSITIONS EACH MYSTERY TEXT
 var pos1 = meditation1.position();
-  pos1.y += 55;
+  pos1.y += 60;
   meditation1.position(pos1);
 
 var pos2 = meditation2.position();
-  pos2.y += 95;
+  pos2.y += 100;
   meditation2.position(pos2);
 
 var pos3 = meditation3.position();
-  pos3.y += 135;
+  pos3.y += 140;
   meditation3.position(pos3);
 
 var pos4 = meditation4.position();
-  pos4.y += 175;
+  pos4.y += 180;
   meditation4.position(pos4);
 
 var pos5 = meditation5.position();
-  pos5.y += 215;
+  pos5.y += 220;
   meditation5.position(pos5);
 
 //BEADS IMAGE COMPONENTS
 //MYSTERY BEADS
 var tlbead = new UI.Circle({
-  position: new Vector2(57,25),
+  position: new Vector2(57,30),
   radius: 3,
   backgroundColor: 'white'
 });
 var trbead = new UI.Circle({
-  position: new Vector2(85,25),
+  position: new Vector2(85,30),
   radius: 3,
   backgroundColor: 'white'
 });
 var brbead = new UI.Circle({
-  position: new Vector2(85,53),
+  position: new Vector2(85,58),
   radius: 3,
   backgroundColor: 'white'
 });
 var blbead = new UI.Circle({
-  position: new Vector2(57,53),
+  position: new Vector2(57,58),
   radius: 3,
   backgroundColor: 'white'
 });
 var cbead = new UI.Circle({
-  position: new Vector2(71,31),
+  position: new Vector2(71,36),
   radius: 3,
   backgroundColor: 'white'
 });
 
 //TOP ROW
 var tbead1 = new UI.Circle({
-  position: new Vector2(66,25),
+  position: new Vector2(66,30),
   radius: 2,
   backgroundColor: 'white'
 });
 var tbead2 = new UI.Circle({
-  position: new Vector2(76,25),
+  position: new Vector2(76,30),
   radius: 2,
   backgroundColor: 'white'
 });
 
 //RIGHT ROW
 var rbead1 = new UI.Circle({
-  position: new Vector2(85,34),
+  position: new Vector2(85,39),
   radius: 2,
   backgroundColor: 'white'
 });
 var rbead2 = new UI.Circle({
-  position: new Vector2(85,43),
+  position: new Vector2(85,48),
   radius: 2,
   backgroundColor: 'white'
 });
 
 //LEFT ROW
 var lbead1 = new UI.Circle({
-  position: new Vector2(57,34),
+  position: new Vector2(57,39),
   radius: 2,
   backgroundColor: 'white'
 });
 var lbead2 = new UI.Circle({
-  position: new Vector2(57,43),
+  position: new Vector2(57,48),
   radius: 2,
   backgroundColor: 'white'
 });
 
 //BOTTOM ROW
 var bbead1 = new UI.Circle({
-  position: new Vector2(66,53),
+  position: new Vector2(66,58),
   radius: 2,
   backgroundColor: 'white'
 });
 var bbead2 = new UI.Circle({
-  position: new Vector2(76,53),
+  position: new Vector2(76,58),
   radius: 2,
   backgroundColor: 'white'
 });
 
 //CROSS IMAGE COMPONENTS
 var hcross = new UI.Rect({
-  position: new Vector2(65,41),
+  position: new Vector2(65,46),
   size: new Vector2(12,4),
   backgroundColor: 'white'
 });
 var vcross = new UI.Rect({
-  position: new Vector2(69,37),
+  position: new Vector2(69,42),
   size: new Vector2(4,14),
   backgroundColor: 'white'
 });
@@ -395,3 +371,47 @@ rosary.add(meditation2);
 rosary.add(meditation3);
 rosary.add(meditation4);
 rosary.add(meditation5);
+
+//PRAYERS SCREEN
+var prayers = new UI.Window({ 
+  fullscreen: true, 
+  backgroundColor: bgcolor, 
+  scrollable: true 
+});
+
+//PRAYERS SCREEN
+var confession = new UI.Window({ 
+  fullscreen: true, 
+  backgroundColor: bgcolor, 
+  scrollable: true 
+});
+
+//MAIN MENU SCREEN
+splashScreen.on('click', 'select', function(e) {
+
+var mainMenu = new UI.Menu({
+  backgroundColor: '#0055AA',
+  textColor: 'black',
+  highlightBackgroundColor: 'FFAA00',
+  highlightTextColor: 'white',
+    sections: [{
+      items: [
+        { title: 'The Rosary', subtitle: 'Today\'s Mysteries' }, 
+        { title: 'Prayers', subtitle: 'The Essentials' },
+        { title: 'Confession', subtitle: 'Prayer Guide' }]
+    }]
+  });
+
+  mainMenu.show();
+  splashScreen.hide();
+  
+  mainMenu.on('select', function(e) {
+   switch(e.itemIndex) {
+      case 0: rosary.show(); mainMenu.hide(); break;
+      case 1: prayers.show(); mainMenu.hide(); break;
+      case 2: confession.show(); mainMenu.hide(); break;
+      default: 
+        console.log('e.itemIndex is out of bounds: ' + e.itemIndex);
+    } 
+ });
+});
