@@ -1,5 +1,5 @@
 // CATHORIST PEBBLE APP BY JASON HERFORTH
-// 2016-02-
+// 2016
 // V1.0
 
 //LET'S GET THIS PARTY STARTED
@@ -8,6 +8,10 @@ var Vector2 = require('vector2');
 
 var bgcolor = '#AA0000';
 var txtcolor = 'white';
+
+var rosaryIMG = 'images/rosary.png';
+var confessionIMG = 'images/confession.png';
+var prayersIMG = 'images/prayers.png';
 
 //SPLASH SCREEN
 var splashScreen = new UI.Window({ 
@@ -38,7 +42,7 @@ var splashScreenTitle3 = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
  font: 'gothic-14',
- text: "2016 Candidly.Us/Cathorist",
+ text: "Candidly.Us/Cathorist SELECT to Continue",
  textAlign: 'center',
  color: txtcolor
 });
@@ -75,9 +79,9 @@ splashScreen.add(splashScreenTitle2);
 splashScreen.add(splashScreenTitle3);
 splashScreen.show();
 
-//ROSARY 
-//SCREEN
-//START
+//  ++ ROSARY ++ 
+//  ++ SCREEN ++
+//  ++ START  ++
 var rosary = new UI.Window({ 
   fullscreen: true, 
   backgroundColor: bgcolor, 
@@ -371,20 +375,149 @@ rosary.add(meditation2);
 rosary.add(meditation3);
 rosary.add(meditation4);
 rosary.add(meditation5);
+//  ++ ROSARY  ++
+//  ++ SCREEN  ++
+//  ++  END    ++
 
-//PRAYERS SCREEN
+//  ++ PRAYERS ++
+//  ++ SCREEN  ++
+//  ++  START  ++
 var prayers = new UI.Window({ 
   fullscreen: true, 
-  backgroundColor: bgcolor, 
-  scrollable: true 
+  backgroundColor: 'black', 
+  scrollable: true
 });
 
-//PRAYERS SCREEN
+// PRAYERS TITLE
+var prayersTitle = new UI.Text({
+ position: new Vector2(0, 0),
+ size: new Vector2(144, 168),
+ font: 'gothic-24-bold',
+ text: "Common Prayers",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+//OUR FATHER
+var ourFatherTitle = new UI.Text({
+ position: new Vector2(0, 35),
+ size: new Vector2(144, 168),
+ font: 'gothic-18-bold',
+ text: "Our Father",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var ourFather = new UI.Text({
+ position: new Vector2(0, 60),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who trespass against us and lead us not into temptation, but deliver us from evil. Amen.",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+//HAIL MARY
+var hailMaryTitle = new UI.Text({
+ position: new Vector2(0, 255),
+ size: new Vector2(144, 168),
+ font: 'gothic-18-bold',
+ text: "Hail Mary",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var hailMary = new UI.Text({
+ position: new Vector2(0, 280),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen.",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+//GLORY BE
+var gloryBeTitle = new UI.Text({
+ position: new Vector2(0, 455),
+ size: new Vector2(144, 168),
+ font: 'gothic-18-bold',
+ text: "Glory Be",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var gloryBe = new UI.Text({
+ position: new Vector2(0, 480),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+//APOSTLES CREED
+var apostlesCreedTitle = new UI.Text({
+ position: new Vector2(0, 600),
+ size: new Vector2(144, 168),
+ font: 'gothic-18-bold',
+ text: "Apostles' Creed",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var apostlesCreed1 = new UI.Text({
+ position: new Vector2(0, 625),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "I believe in God, the Father almighty, creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var apostlesCreed2 = new UI.Text({
+ position: new Vector2(0, 785),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "crucified, died, and was buried. He descended into hell; the third day he rose again from the dead; he ascended into heaven and is seated at the right hand of the Father; from thence he shall come to judge the",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var apostlesCreed3 = new UI.Text({
+ position: new Vector2(0, 945),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+prayers.add(prayersTitle);
+prayers.add(ourFatherTitle);
+prayers.add(ourFather);
+prayers.add(hailMaryTitle);
+prayers.add(hailMary);
+prayers.add(gloryBeTitle);
+prayers.add(gloryBe);
+prayers.add(apostlesCreedTitle);
+prayers.add(apostlesCreed1);
+prayers.add(apostlesCreed2);
+prayers.add(apostlesCreed3);
+//  ++ PRAYERS ++
+//  ++ SCREEN  ++
+//  ++  END    ++
+
+//  ++ CONFESSION ++
+//  ++   SCREEN   ++
+//  ++   START    ++
 var confession = new UI.Window({ 
   fullscreen: true, 
   backgroundColor: bgcolor, 
   scrollable: true 
 });
+//  ++ CONFESSION ++
+//  ++   SCREEN   ++
+//  ++    END     ++
 
 //MAIN MENU SCREEN
 splashScreen.on('click', 'select', function(e) {
@@ -396,9 +529,9 @@ var mainMenu = new UI.Menu({
   highlightTextColor: 'white',
     sections: [{
       items: [
-        { title: 'The Rosary', subtitle: 'Today\'s Mysteries' }, 
-        { title: 'Prayers', subtitle: 'The Essentials' },
-        { title: 'Confession', subtitle: 'Prayer Guide' }]
+        { title: 'The Rosary', subtitle: 'Today\'s Mysteries', icon: rosaryIMG }, 
+        { title: 'Prayers', subtitle: 'The Essentials', icon: prayersIMG },
+        { title: 'Confession', subtitle: 'How To Guide', icon: confessionIMG }]
     }]
   });
 
