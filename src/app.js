@@ -515,6 +515,118 @@ var confession = new UI.Window({
   backgroundColor: bgcolor, 
   scrollable: true 
 });
+
+//CONFESSION HOW TO
+var confessionTitle = new UI.Text({
+ position: new Vector2(0, 0),
+ size: new Vector2(144, 168),
+ font: 'gothic-24-bold',
+ text: "Confession Guide",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+//CONFESSION STEPS
+var confession1 = new UI.Text({
+ position: new Vector2(0, 35),
+ size: new Vector2(144, 168),
+ font: 'gothic-18-bold',
+ text: "Steps when Going to Confession",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var confession2 = new UI.Text({
+ position: new Vector2(0, 60),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "1) Sign of the Cross - (Optional Scripture Reading)",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var confession3 = new UI.Text({
+ position: new Vector2(0, 75),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "2) \"Bless me Father for I have sinned. My last confession was [X] days ago and I want to tell God that I am sorry for the things that I have done and ask God to forgive me. My sins are:\"",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var confession4 = new UI.Text({
+ position: new Vector2(0, 90),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "3) List your sins since your last confession.",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var confession4 = new UI.Text({
+ position: new Vector2(0, 105),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "4) Listen carefully for your penance from the priest.",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var confession5 = new UI.Text({
+ position: new Vector2(0, 120),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "5) Recite the Act of Contrition.",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var confession6 = new UI.Text({
+ position: new Vector2(0, 140),
+ size: new Vector2(144, 168),
+ font: 'gothic-18-bold',
+ text: "Act of Contrition.",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var confession7 = new UI.Text({
+ position: new Vector2(0, 155),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "O MY GOD,  I am heartily sorry for having offended Thee, and I detest all my sins because I dread the loss of Heaven and the pains of Hell; but most of all because they offend Thee, my God, Who art all-good and",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+var confession8 = new UI.Text({
+  position: new Vector2(0, 255),
+  size: new Vector2(144, 168),
+  font: 'gothic-18',
+  text: "deserving of all my love. I firmly resolve, with the help of Thy grace, to confess my sins, to do penance, and to amend my life. Amen.",
+  textAlign: 'center',
+  color: txtcolor
+});
+
+var confession9 = new UI.Text({
+ position: new Vector2(0, 300),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "6) Return to the pew and thank God for His endless mercy. Start your penance.",
+ textAlign: 'center',
+ color: txtcolor
+});
+
+confession.add(confessionTitle);
+confession.add(confession1);
+confession.add(confession2);
+confession.add(confession3);
+confession.add(confession4);
+confession.add(confession5);
+confession.add(confession6);
+confession.add(confession7);
+confession.add(confession8);
+confession.add(confession9);
 //  ++ CONFESSION ++
 //  ++   SCREEN   ++
 //  ++    END     ++
