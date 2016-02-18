@@ -6,9 +6,6 @@
 var UI = require('ui');
 var Vector2 = require('vector2');
 
-var bgcolor = '#AA0000';
-var txtcolor = 'white';
-
 var rosaryIMG = 'images/rosary.png';
 var confessionIMG = 'images/confession.png';
 var prayersIMG = 'images/prayers.png';
@@ -26,7 +23,7 @@ var splashScreenTitle1 = new UI.Text({
  font: 'gothic-24-bold',
  text: "CATHORIST",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var splashScreenTitle2 = new UI.Text({
@@ -35,7 +32,7 @@ var splashScreenTitle2 = new UI.Text({
  font: 'gothic-18-bold',
  text: "Wrist Worn Catholic Spiritual Guide.",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var splashScreenTitle3 = new UI.Text({
@@ -44,7 +41,7 @@ var splashScreenTitle3 = new UI.Text({
  font: 'gothic-14',
  text: "Candidly.Us/Cathorist SELECT to Continue",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 //POSITION TEXT ON THE SPLASH SCREEN
@@ -82,12 +79,6 @@ splashScreen.show();
 //  ++ ROSARY ++ 
 //  ++ SCREEN ++
 //  ++ START  ++
-var rosary = new UI.Window({ 
-  fullscreen: true, 
-  backgroundColor: bgcolor, 
-  scrollable: true 
-});
-
 //ROSARY COMPONENT BLANK VARIABLES
 var day1 ="";
 var day2 ="";
@@ -95,6 +86,15 @@ var day3 ="";
 var day4 ="";
 var day5 ="";
 var mystery ="";
+var bgcolor = '';
+var txtcolor = '';
+var imgColor = '';
+
+var rosary = new UI.Window({ 
+  fullscreen: true, 
+  backgroundColor: bgcolor, 
+  scrollable: true 
+});
 
 //MYSTERIES TEXT
 var glorious1 = "I. Resurrection of Jesus Christ";
@@ -130,7 +130,9 @@ switch (new Date().getDay()) {
         day4 = glorious4;
         day5 = glorious5;
         bgcolor = '#AA55AA';
+        txtcolor = '#FFFFFF';
         mystery = "GLORIOUS";
+        imgColor = '#FFFFFF';
         break;
     case 1:
         day1 = joyful1;
@@ -139,7 +141,9 @@ switch (new Date().getDay()) {
         day4 = joyful4;
         day5 = joyful5;
         bgcolor = '#005500';
+        txtcolor = '#FFFFFF';
         mystery = "JOYFUL";
+        imgColor = '#FFFFFF';
         break;
     case 2:
         day1 = sorrowful1;
@@ -148,7 +152,9 @@ switch (new Date().getDay()) {
         day4 = sorrowful4;
         day5 = sorrowful5;
         bgcolor = '#AA0000';
+        txtcolor = '#FFFFFF';
         mystery = "SORROWFUL";
+        imgColor = '#FFFFFF';
         break;
     case 3:
         day1 = glorious1;
@@ -157,7 +163,9 @@ switch (new Date().getDay()) {
         day4 = glorious4;
         day5 = glorious5;
         bgcolor = '#AA55AA';
+        txtcolor = '#FFFFFF';
         mystery = "GLORIOUS";
+        imgColor = '#FFFFFF';
         break;
     case 4:
         day1 = luminous1;
@@ -165,9 +173,10 @@ switch (new Date().getDay()) {
         day3 = luminous3;
         day4 = luminous4;
         day5 = luminous5;
-        bgcolor = 'white';
-        txtcolor = 'black';
+        bgcolor = '#FFFFFF';
+        txtcolor = '#000000';
         mystery = "LUMINOUS";
+        imgColor = '#000000';
         break;
     case 5:
         day1 = sorrowful1;
@@ -176,7 +185,9 @@ switch (new Date().getDay()) {
         day4 = sorrowful4;
         day5 = sorrowful5;
         bgcolor = '#AA0000';
+        txtcolor = '#FFFFFF';
         mystery = "SORROWFUL";
+        imgColor = '#FFFFFF';
         break;
     case 6:
         day1 = joyful1;
@@ -185,7 +196,9 @@ switch (new Date().getDay()) {
         day4 = joyful4;
         day5 = joyful5;
         bgcolor = '#005500';
+        txtcolor = '#FFFFFF';
         mystery = "JOYFUL";
+        imgColor = '#FFFFFF';
         break;
 }
 
@@ -271,87 +284,87 @@ var pos5 = meditation5.position();
 var tlbead = new UI.Circle({
   position: new Vector2(57,30),
   radius: 3,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 var trbead = new UI.Circle({
   position: new Vector2(85,30),
   radius: 3,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 var brbead = new UI.Circle({
   position: new Vector2(85,58),
   radius: 3,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 var blbead = new UI.Circle({
   position: new Vector2(57,58),
   radius: 3,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 var cbead = new UI.Circle({
   position: new Vector2(71,36),
   radius: 3,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 
 //TOP ROW
 var tbead1 = new UI.Circle({
   position: new Vector2(66,30),
   radius: 2,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 var tbead2 = new UI.Circle({
   position: new Vector2(76,30),
   radius: 2,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 
 //RIGHT ROW
 var rbead1 = new UI.Circle({
   position: new Vector2(85,39),
   radius: 2,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 var rbead2 = new UI.Circle({
   position: new Vector2(85,48),
   radius: 2,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 
 //LEFT ROW
 var lbead1 = new UI.Circle({
   position: new Vector2(57,39),
   radius: 2,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 var lbead2 = new UI.Circle({
   position: new Vector2(57,48),
   radius: 2,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 
 //BOTTOM ROW
 var bbead1 = new UI.Circle({
   position: new Vector2(66,58),
   radius: 2,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 var bbead2 = new UI.Circle({
   position: new Vector2(76,58),
   radius: 2,
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 
 //CROSS IMAGE COMPONENTS
 var hcross = new UI.Rect({
   position: new Vector2(65,46),
   size: new Vector2(12,4),
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 var vcross = new UI.Rect({
   position: new Vector2(69,42),
   size: new Vector2(4,14),
-  backgroundColor: 'white'
+  backgroundColor: imgColor
 });
 
 rosary.add(dailyRosary);
@@ -395,7 +408,7 @@ var prayersTitle = new UI.Text({
  font: 'gothic-24-bold',
  text: "Common Prayers",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 //OUR FATHER
@@ -405,96 +418,106 @@ var ourFatherTitle = new UI.Text({
  font: 'gothic-18-bold',
  text: "Our Father",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
-var ourFather = new UI.Text({
+var ourFather1 = new UI.Text({
  position: new Vector2(0, 60),
  size: new Vector2(144, 168),
  font: 'gothic-18',
- text: "Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who trespass against us and lead us not into temptation, but deliver us from evil. Amen.",
+ text: "Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
+});
+
+var ourFather2 = new UI.Text({
+ position: new Vector2(0, 240),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "trespass against us and lead us not into temptation, but deliver us from evil. Amen.",
+ textAlign: 'center',
+ color: 'white'
 });
 
 //HAIL MARY
 var hailMaryTitle = new UI.Text({
- position: new Vector2(0, 255),
+ position: new Vector2(0, 320),
  size: new Vector2(144, 168),
  font: 'gothic-18-bold',
  text: "Hail Mary",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var hailMary = new UI.Text({
- position: new Vector2(0, 280),
+ position: new Vector2(0, 345),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen.",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 //GLORY BE
 var gloryBeTitle = new UI.Text({
- position: new Vector2(0, 455),
+ position: new Vector2(0, 515),
  size: new Vector2(144, 168),
  font: 'gothic-18-bold',
  text: "Glory Be",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var gloryBe = new UI.Text({
- position: new Vector2(0, 480),
+ position: new Vector2(0, 540),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 //APOSTLES CREED
 var apostlesCreedTitle = new UI.Text({
- position: new Vector2(0, 600),
+ position: new Vector2(0, 660),
  size: new Vector2(144, 168),
  font: 'gothic-18-bold',
  text: "Apostles' Creed",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var apostlesCreed1 = new UI.Text({
- position: new Vector2(0, 625),
+ position: new Vector2(0, 685),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "I believe in God, the Father almighty, creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var apostlesCreed2 = new UI.Text({
- position: new Vector2(0, 785),
+ position: new Vector2(0, 845),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "crucified, died, and was buried. He descended into hell; the third day he rose again from the dead; he ascended into heaven and is seated at the right hand of the Father; from thence he shall come to judge the",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var apostlesCreed3 = new UI.Text({
- position: new Vector2(0, 945),
+ position: new Vector2(0, 1005),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 prayers.add(prayersTitle);
 prayers.add(ourFatherTitle);
-prayers.add(ourFather);
+prayers.add(ourFather1);
+prayers.add(ourFather2);
 prayers.add(hailMaryTitle);
 prayers.add(hailMary);
 prayers.add(gloryBeTitle);
@@ -512,7 +535,7 @@ prayers.add(apostlesCreed3);
 //  ++   START    ++
 var confession = new UI.Window({ 
   fullscreen: true, 
-  backgroundColor: bgcolor, 
+  backgroundColor: "black", 
   scrollable: true 
 });
 
@@ -523,98 +546,98 @@ var confessionTitle = new UI.Text({
  font: 'gothic-24-bold',
  text: "Confession Guide",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 //CONFESSION STEPS
 var confession1 = new UI.Text({
- position: new Vector2(0, 35),
+ position: new Vector2(0, 30),
  size: new Vector2(144, 168),
  font: 'gothic-18-bold',
- text: "Steps when Going to Confession",
+ text: "Steps When Going to Confession",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var confession2 = new UI.Text({
- position: new Vector2(0, 60),
+ position: new Vector2(0, 70),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "1) Sign of the Cross - (Optional Scripture Reading)",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var confession3 = new UI.Text({
- position: new Vector2(0, 75),
+ position: new Vector2(0, 130),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "2) \"Bless me Father for I have sinned. My last confession was [X] days ago and I want to tell God that I am sorry for the things that I have done and ask God to forgive me. My sins are:\"",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var confession4 = new UI.Text({
- position: new Vector2(0, 90),
+ position: new Vector2(0, 240),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "3) List your sins since your last confession.",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var confession4 = new UI.Text({
- position: new Vector2(0, 105),
+ position: new Vector2(0, 280),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "4) Listen carefully for your penance from the priest.",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var confession5 = new UI.Text({
- position: new Vector2(0, 120),
+ position: new Vector2(0, 340),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "5) Recite the Act of Contrition.",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var confession6 = new UI.Text({
- position: new Vector2(0, 140),
+ position: new Vector2(0, 385),
  size: new Vector2(144, 168),
  font: 'gothic-18-bold',
  text: "Act of Contrition.",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var confession7 = new UI.Text({
- position: new Vector2(0, 155),
+ position: new Vector2(0, 410),
  size: new Vector2(144, 168),
  font: 'gothic-18',
- text: "O MY GOD,  I am heartily sorry for having offended Thee, and I detest all my sins because I dread the loss of Heaven and the pains of Hell; but most of all because they offend Thee, my God, Who art all-good and",
+ text: "O MY GOD,  I am heartily sorry for having offended Thee, and I detest all my sins because I dread the loss of Heaven and the pains of Hell; but most of all because they offend Thee, my God, Who art all",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 var confession8 = new UI.Text({
-  position: new Vector2(0, 255),
+  position: new Vector2(0, 555),
   size: new Vector2(144, 168),
   font: 'gothic-18',
-  text: "deserving of all my love. I firmly resolve, with the help of Thy grace, to confess my sins, to do penance, and to amend my life. Amen.",
+  text: "good and deserving of all my love. I firmly resolve, with the help of Thy grace, to confess my sins, to do penance, and to amend my life. Amen.",
   textAlign: 'center',
-  color: txtcolor
+  color: 'white'
 });
 
 var confession9 = new UI.Text({
- position: new Vector2(0, 300),
+ position: new Vector2(0, 675),
  size: new Vector2(144, 168),
  font: 'gothic-18',
- text: "6) Return to the pew and thank God for His endless mercy. Start your penance.",
+ text: "6) Return to the pew and thank God for His boundless mercy. Start your penance.",
  textAlign: 'center',
- color: txtcolor
+ color: 'white'
 });
 
 confession.add(confessionTitle);
