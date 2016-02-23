@@ -30,7 +30,7 @@ var splashScreenTitle2 = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
  font: 'gothic-18-bold',
- text: "Wrist Worn Catholic Spiritual Guide.",
+ text: "Catholicism On Your Wrist.",
  textAlign: 'center',
  color: 'white'
 });
@@ -86,15 +86,9 @@ var day3 ="";
 var day4 ="";
 var day5 ="";
 var mystery ="";
-var bgcolor = '';
 var txtcolor = '';
 var imgColor = '';
-
-var rosary = new UI.Window({ 
-  fullscreen: true, 
-  backgroundColor: bgcolor, 
-  scrollable: true 
-});
+var bgcolor = '';
 
 //MYSTERIES TEXT
 var glorious1 = "I. Resurrection of Jesus Christ";
@@ -202,6 +196,12 @@ switch (new Date().getDay()) {
         break;
 }
 
+var rosary = new UI.Window({ 
+  fullscreen: true,
+  backgroundColor: bgcolor,
+  scrollable: true 
+});
+
 //DAILY ROSARY TITLE
 var dailyRosary = new UI.Text({
  position: new Vector2(0, 0),
@@ -216,7 +216,7 @@ var dailyRosary = new UI.Text({
 var meditation1 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18-bold',
+ font: 'gothic-18',
  text: day1,
  textAlign: 'center',
  color: txtcolor
@@ -225,7 +225,7 @@ position: new Vector2(0, 0),
 var meditation2 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18-bold',
+ font: 'gothic-18',
  text: day2,
  textAlign: 'center',
  color: txtcolor
@@ -234,7 +234,7 @@ position: new Vector2(0, 0),
 var meditation3 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18-bold',
+ font: 'gothic-18',
  text: day3,
  textAlign: 'center',
  color: txtcolor
@@ -243,7 +243,7 @@ position: new Vector2(0, 0),
 var meditation4 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18-bold',
+ font: 'gothic-18',
  text: day4,
  textAlign: 'center',
  color: txtcolor
@@ -252,7 +252,7 @@ position: new Vector2(0, 0),
 var meditation5 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18-bold',
+ font: 'gothic-18',
  text: day5,
  textAlign: 'center',
  color: txtcolor
