@@ -88,7 +88,7 @@ var day5 ="";
 var mystery ="";
 var txtcolor = '';
 var imgColor = '';
-var bgcolor = '';
+var titleBG = '';
 
 //MYSTERIES TEXT
 var glorious1 = "I. Resurrection of Jesus Christ";
@@ -123,10 +123,10 @@ switch (new Date().getDay()) {
         day3 = glorious3;
         day4 = glorious4;
         day5 = glorious5;
-        bgcolor = '#AA55AA';
         txtcolor = '#FFFFFF';
         mystery = "GLORIOUS";
         imgColor = '#FFFFFF';
+        titleBG = '#AA55AA';
         break;
     case 1:
         day1 = joyful1;
@@ -134,10 +134,10 @@ switch (new Date().getDay()) {
         day3 = joyful3;
         day4 = joyful4;
         day5 = joyful5;
-        bgcolor = '#005500';
         txtcolor = '#FFFFFF';
         mystery = "JOYFUL";
         imgColor = '#FFFFFF';
+        titleBG = '#005500';
         break;
     case 2:
         day1 = sorrowful1;
@@ -145,10 +145,10 @@ switch (new Date().getDay()) {
         day3 = sorrowful3;
         day4 = sorrowful4;
         day5 = sorrowful5;
-        bgcolor = '#AA0000';
         txtcolor = '#FFFFFF';
         mystery = "SORROWFUL";
         imgColor = '#FFFFFF';
+        titleBG = '#AA0000';
         break;
     case 3:
         day1 = glorious1;
@@ -156,10 +156,10 @@ switch (new Date().getDay()) {
         day3 = glorious3;
         day4 = glorious4;
         day5 = glorious5;
-        bgcolor = '#AA55AA';
         txtcolor = '#FFFFFF';
         mystery = "GLORIOUS";
         imgColor = '#FFFFFF';
+        titleBG = '#AA55AA';
         break;
     case 4:
         day1 = luminous1;
@@ -167,10 +167,10 @@ switch (new Date().getDay()) {
         day3 = luminous3;
         day4 = luminous4;
         day5 = luminous5;
-        bgcolor = '#FFFFFF';
         txtcolor = '#000000';
         mystery = "LUMINOUS";
         imgColor = '#000000';
+        titleBG = '#55AAAA';
         break;
     case 5:
         day1 = sorrowful1;
@@ -178,10 +178,10 @@ switch (new Date().getDay()) {
         day3 = sorrowful3;
         day4 = sorrowful4;
         day5 = sorrowful5;
-        bgcolor = '#AA0000';
         txtcolor = '#FFFFFF';
         mystery = "SORROWFUL";
         imgColor = '#FFFFFF';
+        titleBG = '#AA0000';
         break;
     case 6:
         day1 = joyful1;
@@ -189,16 +189,16 @@ switch (new Date().getDay()) {
         day3 = joyful3;
         day4 = joyful4;
         day5 = joyful5;
-        bgcolor = '#005500';
         txtcolor = '#FFFFFF';
         mystery = "JOYFUL";
         imgColor = '#FFFFFF';
+        titleBG = '#005500';
         break;
 }
 
 var rosary = new UI.Window({ 
   fullscreen: true,
-  backgroundColor: bgcolor,
+  backgroundColor: 'white',
   scrollable: true 
 });
 
@@ -212,6 +212,12 @@ var dailyRosary = new UI.Text({
  color: txtcolor
 });
 
+var titeBackgound = new UI.Rect({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 70),
+  backgroundColor: titleBG
+});
+
 //SETS STYLE FOR EACH MYSTERY TEXT
 var meditation1 = new UI.Text({
 position: new Vector2(0, 0),
@@ -219,7 +225,7 @@ position: new Vector2(0, 0),
  font: 'gothic-18',
  text: day1,
  textAlign: 'center',
- color: txtcolor
+ color: 'black'
 });
 
 var meditation2 = new UI.Text({
@@ -228,7 +234,7 @@ position: new Vector2(0, 0),
  font: 'gothic-18',
  text: day2,
  textAlign: 'center',
- color: txtcolor
+ color: 'black'
 });
 
 var meditation3 = new UI.Text({
@@ -237,7 +243,7 @@ position: new Vector2(0, 0),
  font: 'gothic-18',
  text: day3,
  textAlign: 'center',
- color: txtcolor
+ color: 'black'
 });
 
 var meditation4 = new UI.Text({
@@ -246,7 +252,7 @@ position: new Vector2(0, 0),
  font: 'gothic-18',
  text: day4,
  textAlign: 'center',
- color: txtcolor
+ color: 'black'
 });
 
 var meditation5 = new UI.Text({
@@ -255,28 +261,28 @@ position: new Vector2(0, 0),
  font: 'gothic-18',
  text: day5,
  textAlign: 'center',
- color: txtcolor
+ color: 'black'
 });
 
 //POSITIONS EACH MYSTERY TEXT
 var pos1 = meditation1.position();
-  pos1.y += 60;
+  pos1.y += 70;
   meditation1.position(pos1);
 
 var pos2 = meditation2.position();
-  pos2.y += 100;
+  pos2.y += 110;
   meditation2.position(pos2);
 
 var pos3 = meditation3.position();
-  pos3.y += 140;
+  pos3.y += 150;
   meditation3.position(pos3);
 
 var pos4 = meditation4.position();
-  pos4.y += 180;
+  pos4.y += 190;
   meditation4.position(pos4);
 
 var pos5 = meditation5.position();
-  pos5.y += 220;
+  pos5.y += 230;
   meditation5.position(pos5);
 
 //BEADS IMAGE COMPONENTS
@@ -361,12 +367,14 @@ var hcross = new UI.Rect({
   size: new Vector2(12,4),
   backgroundColor: imgColor
 });
+
 var vcross = new UI.Rect({
   position: new Vector2(69,42),
   size: new Vector2(4,14),
   backgroundColor: imgColor
 });
 
+rosary.add(titeBackgound);
 rosary.add(dailyRosary);
 rosary.add(tlbead);
 rosary.add(trbead);
@@ -397,9 +405,9 @@ rosary.add(meditation5);
 //  ++  START  ++
 var prayers = new UI.Window({ 
   fullscreen: true, 
-  backgroundColor: 'black', 
+  backgroundColor: 'white', 
   scrollable: true
-});
+  });
 
 // PRAYERS TITLE
 var prayersTitle = new UI.Text({
@@ -411,6 +419,12 @@ var prayersTitle = new UI.Text({
  color: 'white'
 });
 
+var titeHeaderBG = new UI.Rect({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 35),
+  backgroundColor: '#0000AA'
+});
+
 //OUR FATHER
 var ourFatherTitle = new UI.Text({
  position: new Vector2(0, 35),
@@ -418,7 +432,7 @@ var ourFatherTitle = new UI.Text({
  font: 'gothic-18-bold',
  text: "Our Father",
  textAlign: 'center',
- color: 'white'
+ color: 'black'
 });
 
 var ourFather1 = new UI.Text({
@@ -427,7 +441,7 @@ var ourFather1 = new UI.Text({
  font: 'gothic-18',
  text: "Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who",
  textAlign: 'center',
- color: 'white'
+ color: 'black'
 });
 
 var ourFather2 = new UI.Text({
@@ -436,7 +450,7 @@ var ourFather2 = new UI.Text({
  font: 'gothic-18',
  text: "trespass against us and lead us not into temptation, but deliver us from evil. Amen.",
  textAlign: 'center',
- color: 'white'
+ color: 'black'
 });
 
 //HAIL MARY
@@ -446,7 +460,7 @@ var hailMaryTitle = new UI.Text({
  font: 'gothic-18-bold',
  text: "Hail Mary",
  textAlign: 'center',
- color: 'white'
+ color: 'black'
 });
 
 var hailMary = new UI.Text({
@@ -455,7 +469,7 @@ var hailMary = new UI.Text({
  font: 'gothic-18',
  text: "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen.",
  textAlign: 'center',
- color: 'white'
+ color: 'black'
 });
 
 //GLORY BE
@@ -465,7 +479,7 @@ var gloryBeTitle = new UI.Text({
  font: 'gothic-18-bold',
  text: "Glory Be",
  textAlign: 'center',
- color: 'white'
+ color: 'black'
 });
 
 var gloryBe = new UI.Text({
@@ -474,7 +488,7 @@ var gloryBe = new UI.Text({
  font: 'gothic-18',
  text: "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
  textAlign: 'center',
- color: 'white'
+ color: 'black'
 });
 
 //APOSTLES CREED
@@ -484,7 +498,7 @@ var apostlesCreedTitle = new UI.Text({
  font: 'gothic-18-bold',
  text: "Apostles' Creed",
  textAlign: 'center',
- color: 'white'
+ color: 'black'
 });
 
 var apostlesCreed1 = new UI.Text({
@@ -493,7 +507,7 @@ var apostlesCreed1 = new UI.Text({
  font: 'gothic-18',
  text: "I believe in God, the Father almighty, creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was",
  textAlign: 'center',
- color: 'white'
+ color: 'black'
 });
 
 var apostlesCreed2 = new UI.Text({
@@ -502,7 +516,7 @@ var apostlesCreed2 = new UI.Text({
  font: 'gothic-18',
  text: "crucified, died, and was buried. He descended into hell; the third day he rose again from the dead; he ascended into heaven and is seated at the right hand of the Father; from thence he shall come to judge the",
  textAlign: 'center',
- color: 'white'
+ color: 'black'
 });
 
 var apostlesCreed3 = new UI.Text({
@@ -511,9 +525,10 @@ var apostlesCreed3 = new UI.Text({
  font: 'gothic-18',
  text: "living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.",
  textAlign: 'center',
- color: 'white'
+ color: 'black'
 });
 
+prayers.add(titeHeaderBG);
 prayers.add(prayersTitle);
 prayers.add(ourFatherTitle);
 prayers.add(ourFather1);
@@ -659,8 +674,8 @@ splashScreen.on('click', 'select', function(e) {
 
 var mainMenu = new UI.Menu({
   backgroundColor: '#0055AA',
-  textColor: 'black',
-  highlightBackgroundColor: 'FFAA00',
+  textColor: 'white',
+  highlightBackgroundColor: '#000000',
   highlightTextColor: 'white',
     sections: [{
       items: [
