@@ -3,8 +3,8 @@
     "capabilities": [
         ""
     ],
-    "companyName": "Jason Herforth",
-    "longName": "Daily Rosary",
+    "companyName": "Candidly.Us",
+    "longName": "Cathorist",
     "projectType": "pebblejs",
     "resources": {
         "media": [
@@ -57,7 +57,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "Daily Rosary",
+    "shortName": "Cathorist",
     "targetPlatforms": [
         "aplite",
         "basalt"

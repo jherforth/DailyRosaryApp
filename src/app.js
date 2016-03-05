@@ -23,7 +23,7 @@ var splashScreenTitle1 = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
  font: 'gothic-24-bold',
- text: "CATHORIST",
+ text: "Petrus Carpi",
  textAlign: 'center',
  color: 'white'
 });
@@ -41,7 +41,7 @@ var splashScreenTitle3 = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
  font: 'gothic-14',
- text: "Candidly.Us/Cathorist SELECT to Continue",
+ text: "Candidly.Us/PetrusCarpi SELECT to Continue",
  textAlign: 'center',
  color: 'white'
 });
@@ -149,6 +149,11 @@ var band = new UI.Rect({
   size: new Vector2(41,168),
   backgroundColor: '#555555'
 });
+var band1 = new UI.Rect({
+  position: new Vector2(48,0),
+  size: new Vector2(43,168),
+  backgroundColor: '#000000'
+});
 var watch3 = new UI.Rect({
   position: new Vector2(48,25),
   size: new Vector2(8,61),
@@ -160,6 +165,7 @@ var watch4 = new UI.Rect({
   backgroundColor: '#000000'
 });
 
+splashScreen.add(band1);
 splashScreen.add(band);
 splashScreen.add(watch3);
 splashScreen.add(watch4);
@@ -1077,7 +1083,7 @@ var chaplet8 = new UI.Text({
 });
 
 var chaplet9 = new UI.Text({
- position: new Vector2(0, 915),
+ position: new Vector2(0, 912),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "Eternal God, in whom mercy is endless and the treasury of compassion, inexhaustible, look kindly upon us and increase Your mercy in us,",
@@ -1086,7 +1092,7 @@ var chaplet9 = new UI.Text({
 });
 
 var chapletEnd = new UI.Text({
- position: new Vector2(0, 1025),
+ position: new Vector2(0, 1022),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "that in difficult moments we might not despair nor become despondent, but with great confidence submit ourselves to Your holy will, which is Love and Mercy itself.",
