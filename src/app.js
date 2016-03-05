@@ -9,6 +9,7 @@ var Vector2 = require('vector2');
 var rosaryIMG = 'images/rosary.png';
 var confessionIMG = 'images/confession.png';
 var prayersIMG = 'images/prayers.png';
+var stationsIMG = 'images/stations.png';
 
 //SPLASH SCREEN
 var splashScreen = new UI.Window({ 
@@ -775,6 +776,198 @@ confession.add(confession9);
 //  ++   SCREEN   ++
 //  ++    END     ++
 
+//  ++ STATIONS ++
+//  ++ SCREEN  ++
+//  ++  START  ++
+var stations = new UI.Window({ 
+  fullscreen: true, 
+  backgroundColor: 'white', 
+  scrollable: true
+  });
+
+// PRAYERS TITLE
+var stationsTitle = new UI.Text({
+ position: new Vector2(0, 0),
+ size: new Vector2(144, 168),
+ font: 'gothic-24-bold',
+ text: "Stations of the Cross",
+ textAlign: 'center',
+ color: 'white'
+});
+
+var stationsHeaderBG = new UI.Rect({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 58),
+  backgroundColor: '#AA0000'
+});
+
+//OUR FATHER
+var stationsOpening = new UI.Text({
+ position: new Vector2(0, 65),
+ size: new Vector2(144, 168),
+ font: 'gothic-18-bold',
+ text: "Begin by reciting the Act of Contrition",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station1 = new UI.Text({
+ position: new Vector2(0, 125),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The First Station - Jesus is condemned to death. (Mark 15:1-15) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station2 = new UI.Text({
+ position: new Vector2(0, 235),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Second Station - Jesus carries His cross. (John 19:13-17) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station3 = new UI.Text({
+ position: new Vector2(0, 345),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Third Station - Jesus falls for the first time. (Isaiah 53:4-7) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station4 = new UI.Text({
+ position: new Vector2(0, 455),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Fourth Station - Jesus meets his Mother. (Luke 2:25-40) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station5 = new UI.Text({
+ position: new Vector2(0, 560),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Fifth Station - Simon of Cyrene helps Jesus. (Mark 15:21) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station6 = new UI.Text({
+ position: new Vector2(0, 665),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Sixth Station - Veronica wipes the face of Jesus. (Matthew 25:40) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station7 = new UI.Text({
+ position: new Vector2(0, 788),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Seventh Station - Jesus falls the second time. (Psalm 38:6-22) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station8 = new UI.Text({
+ position: new Vector2(0, 898),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Eighth Station - Jesus consoles the women of Jerusalem. (Luke 23:27-31) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station9 = new UI.Text({
+ position: new Vector2(0, 1020),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Ninth Station - Jesus falls the third time. (Psalm 37:23-24) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station10 = new UI.Text({
+ position: new Vector2(0, 1125),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Tenth Station - Jesus is stripped of his garments. (John 19:23-24) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station11 = new UI.Text({
+ position: new Vector2(0, 1243),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Eleventh Station - Jesus is nailed to the Cross. (Luke 23:33-43) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station12 = new UI.Text({
+ position: new Vector2(0, 1345),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Twelfth Station - Jesus dies on the Cross. (John 19:28-37) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station13 = new UI.Text({
+ position: new Vector2(0, 1453),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Thirteenth Station - Jesus is taken down from the Cross. (John 19:38-40) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var station14 = new UI.Text({
+ position: new Vector2(0, 1570),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The Fourteenth Station - Jesus is laid in the Tomb. (Matthew 27:57-61) + Our Father + Hail Mary + Glory Be to the Father +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var stationEnd = new UI.Text({
+ position: new Vector2(0, 1690),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "This was the traditional Stations of the Cross, there is an alternative offered by Saint Pope John Paul II.",
+ textAlign: 'center',
+ color: 'black'
+});
+
+stations.add(stationsHeaderBG);
+stations.add(stationsTitle);
+stations.add(stationsOpening);
+stations.add(station1);
+stations.add(station2);
+stations.add(station3);
+stations.add(station4);
+stations.add(station5);
+stations.add(station6);
+stations.add(station7);
+stations.add(station8);
+stations.add(station9);
+stations.add(station10);
+stations.add(station11);
+stations.add(station12);
+stations.add(station13);
+stations.add(station14);
+stations.add(stationEnd);
+//  ++ STATIONS ++
+//  ++ SCREEN  ++
+//  ++  END    ++
+
 //MAIN MENU SCREEN
 splashScreen.on('click', 'select', function(e) {
 
@@ -787,7 +980,8 @@ var mainMenu = new UI.Menu({
       items: [
         { title: 'The Rosary', subtitle: 'Today\'s Mysteries', icon: rosaryIMG }, 
         { title: 'Prayers', subtitle: 'The Essentials', icon: prayersIMG },
-        { title: 'Confession', subtitle: 'How To Guide', icon: confessionIMG }]
+        { title: 'Confession', subtitle: 'How To Guide', icon: confessionIMG },
+        { title: 'Stations of', subtitle: 'the Cross', icon: stationsIMG }]
     }]
   });
 
@@ -799,6 +993,7 @@ var mainMenu = new UI.Menu({
       case 0: rosary.show(); mainMenu.hide(); break;
       case 1: prayers.show(); mainMenu.hide(); break;
       case 2: confession.show(); mainMenu.hide(); break;
+      case 3: stations.show(); mainMenu.hide(); break;
       default: 
         console.log('e.itemIndex is out of bounds: ' + e.itemIndex);
     } 

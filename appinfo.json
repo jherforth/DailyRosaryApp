@@ -30,6 +30,11 @@
                 "type": "font"
             },
             {
+                "file": "images/stations.png",
+                "name": "IMAGES_STATIONS_PNG",
+                "type": "bitmap"
+            },
+            {
                 "file": "images/prayers.png",
                 "name": "IMAGES_PRAYERS_PNG",
                 "type": "bitmap"
