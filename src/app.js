@@ -46,31 +46,125 @@ var splashScreenTitle3 = new UI.Text({
 
 //POSITION TEXT ON THE SPLASH SCREEN
 var titlePos1 = splashScreenTitle1.position();
-  titlePos1.y += 5;
+  titlePos1.y += 0;
   splashScreenTitle1.position(titlePos1);
 
 var titlePos2 = splashScreenTitle2.position();
-  titlePos2.y += 70;
+  titlePos2.y += 80;
   splashScreenTitle2.position(titlePos2);
 
 var titlePos3 = splashScreenTitle3.position();
-  titlePos3.y += 115;
+  titlePos3.y += 117;
   splashScreenTitle3.position(titlePos3);
 
-//TITLE CROSS IMAGE COMPONENTS
+//EUCHARIST IMAGE COMPONENTS
 var titleCrossH = new UI.Rect({
-  position: new Vector2(62,43),
-  size: new Vector2(22,8),
-  backgroundColor: 'white'
+  position: new Vector2(66,44),
+  size: new Vector2(8,2),
+  backgroundColor: '#AAAA55'
 });
 var titleCrossV = new UI.Rect({
-  position: new Vector2(69,36),
-  size: new Vector2(8,30),
-  backgroundColor: 'white'
+  position: new Vector2(69,41),
+  size: new Vector2(2,8),
+  backgroundColor: '#AAAA55'
+});
+var eucharist = new UI.Circle({
+  position: new Vector2(69,45),
+  radius: 8,
+  backgroundColor: '#FFFFAA'
 });
 
+//CHALICE IMAGE COMPONENTS
+var background1 = new UI.Rect({
+  position: new Vector2(55,37),
+  size: new Vector2(30,15),
+  backgroundColor: '#55AAFF'
+});
+var chalice1 = new UI.Circle({
+  position: new Vector2(69,49),
+  radius: 10,
+  backgroundColor: '#FFFF00'
+});
+var chalice2 = new UI.Circle({
+  position: new Vector2(69,60),
+  radius: 2,
+  backgroundColor: '#FFFF00'
+});
+var chalice3 = new UI.Circle({
+  position: new Vector2(69,65),
+  radius: 2,
+  backgroundColor: '#FFFF00'
+});
+var chalice4 = new UI.Circle({
+  position: new Vector2(69,73),
+  radius: 6,
+  backgroundColor: '#FFFF00'
+});
+var background2 = new UI.Rect({
+  position: new Vector2(55,73),
+  size: new Vector2(30,7),
+  backgroundColor: '#55AAFF'
+});
+
+//WATCH IMAGE COMPONENTS
+var watch1 = new UI.Rect({
+  position: new Vector2(43,28),
+  size: new Vector2(53,55),
+  backgroundColor: '#000000'
+});
+var watch2 = new UI.Rect({
+  position: new Vector2(49,35),
+  size: new Vector2(41,41),
+  backgroundColor: '#55AAFF'
+});
+var background3 = new UI.Rect({
+  position: new Vector2(55,76),
+  size: new Vector2(30,4),
+  backgroundColor: '#000000'
+});
+var button1 = new UI.Rect({
+  position: new Vector2(39,33),
+  size: new Vector2(4,14),
+  backgroundColor: '#000000'
+});
+var button2 = new UI.Rect({
+  position: new Vector2(96,33),
+  size: new Vector2(4,14),
+  backgroundColor: '#000000'
+});
+var button3 = new UI.Rect({
+  position: new Vector2(96,49),
+  size: new Vector2(4,14),
+  backgroundColor: '#000000'
+});
+var button4 = new UI.Rect({
+  position: new Vector2(96,65),
+  size: new Vector2(4,14),
+  backgroundColor: '#000000'
+});
+var band = new UI.Rect({
+  position: new Vector2(49,0),
+  size: new Vector2(41,168),
+  backgroundColor: '#555555'
+});
+
+splashScreen.add(band);
+splashScreen.add(watch1);
+splashScreen.add(watch2);
+splashScreen.add(chalice1);
+splashScreen.add(chalice3);
+splashScreen.add(chalice4);
+splashScreen.add(background1);
+splashScreen.add(eucharist);
 splashScreen.add(titleCrossH);
 splashScreen.add(titleCrossV);
+splashScreen.add(chalice2);
+splashScreen.add(background2);
+splashScreen.add(background3);
+splashScreen.add(button1);
+splashScreen.add(button2);
+splashScreen.add(button3);
+splashScreen.add(button4);
 splashScreen.add(splashScreenTitle1);
 splashScreen.add(splashScreenTitle2);
 splashScreen.add(splashScreenTitle3);
