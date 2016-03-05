@@ -30,6 +30,11 @@
                 "type": "font"
             },
             {
+                "file": "images/heart.png",
+                "name": "IMAGES_HEART_PNG",
+                "type": "bitmap"
+            },
+            {
                 "file": "images/stations.png",
                 "name": "IMAGES_STATIONS_PNG",
                 "type": "bitmap"

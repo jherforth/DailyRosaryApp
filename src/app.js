@@ -10,6 +10,7 @@ var rosaryIMG = 'images/rosary.png';
 var confessionIMG = 'images/confession.png';
 var prayersIMG = 'images/prayers.png';
 var stationsIMG = 'images/stations.png';
+var heartIMG = 'images/heart.png';
 
 //SPLASH SCREEN
 var splashScreen = new UI.Window({ 
@@ -968,6 +969,148 @@ stations.add(stationEnd);
 //  ++ SCREEN  ++
 //  ++  END    ++
 
+//  ++ CHAPLET ++
+//  ++ SCREEN  ++
+//  ++  START  ++
+var chaplet = new UI.Window({ 
+  fullscreen: true, 
+  backgroundColor: 'white', 
+  scrollable: true
+  });
+
+// PRAYERS TITLE
+var chapletTitle = new UI.Text({
+ position: new Vector2(0, 0),
+ size: new Vector2(144, 168),
+ font: 'gothic-24-bold',
+ text: "Chaplet of Divine Mercy",
+ textAlign: 'center',
+ color: 'white'
+});
+
+var chapletHeaderBG = new UI.Rect({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 58),
+  backgroundColor: '#550055'
+});
+
+//OUR FATHER
+var chapletOpening = new UI.Text({
+ position: new Vector2(0, 65),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+  text: "Using a Rosary starting with the Crucifix: Make the sign of the cross.",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var chaplet1 = new UI.Text({
+ position: new Vector2(0, 130),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "First Large Bead:",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var chaplet2 = new UI.Text({
+ position: new Vector2(0, 150),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+  text: "You expired, Jesus, but the source of life gushed forth for souls, and the ocean of mercy opened up for the whole world. O Fount of Life, unfathomable Divine Mercy, envelop the whole world and empty Yourself out upon us. ",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var chaplet3 = new UI.Text({
+ position: new Vector2(0, 341),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+  text: "Next Three Small Beads: + Our Father + Hail Mary + Apostles' Creed +",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var chaplet4 = new UI.Text({
+ position: new Vector2(0, 410),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "The second large bead and all after, pray The Eternal Father prayer:",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var chaplet5 = new UI.Text({
+ position: new Vector2(0, 465),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "Eternal Father, I offer you the Body and Blood, Soul and Divinity of Your Dearly Beloved Son, Our Lord, Jesus Christ, in atonement for our sins and those of the whole world.",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var chaplet6 = new UI.Text({
+ position: new Vector2(0, 618),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "On the 10 small decade beads pray: For the sake of His sorrowful Passion, have mercy on us and on the whole world.",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var chaplet7 = new UI.Text({
+ position: new Vector2(0, 723),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "Conclude at the medalion by praying: (x3) Holy God, Holy Mighty One, Holy Immortal One, have mercy on us and on the whole world.",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var chaplet8 = new UI.Text({
+ position: new Vector2(0, 860),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "Concluding Prayer (optional):",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var chaplet9 = new UI.Text({
+ position: new Vector2(0, 915),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "Eternal God, in whom mercy is endless and the treasury of compassion, inexhaustible, look kindly upon us and increase Your mercy in us,",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var chapletEnd = new UI.Text({
+ position: new Vector2(0, 1025),
+ size: new Vector2(144, 168),
+ font: 'gothic-18',
+ text: "that in difficult moments we might not despair nor become despondent, but with great confidence submit ourselves to Your holy will, which is Love and Mercy itself.",
+ textAlign: 'center',
+ color: 'black'
+});
+
+chaplet.add(chapletHeaderBG);
+chaplet.add(chapletTitle);
+chaplet.add(chapletOpening);
+chaplet.add(chaplet1);
+chaplet.add(chaplet2);
+chaplet.add(chaplet3);
+chaplet.add(chaplet4);
+chaplet.add(chaplet5);
+chaplet.add(chaplet6);
+chaplet.add(chaplet7);
+chaplet.add(chaplet8);
+chaplet.add(chaplet9);
+chaplet.add(chapletEnd);
+//  ++ CHAPLET ++
+//  ++ SCREEN  ++
+//  ++  END    ++
+
 //MAIN MENU SCREEN
 splashScreen.on('click', 'select', function(e) {
 
@@ -981,7 +1124,8 @@ var mainMenu = new UI.Menu({
         { title: 'The Rosary', subtitle: 'Today\'s Mysteries', icon: rosaryIMG }, 
         { title: 'Prayers', subtitle: 'The Essentials', icon: prayersIMG },
         { title: 'Confession', subtitle: 'Quick Guide', icon: confessionIMG },
-        { title: 'Stations of', subtitle: 'the Cross', icon: stationsIMG }]
+        { title: 'Stations of', subtitle: 'the Cross', icon: stationsIMG },
+        { title: 'Divine Mercy', subtitle: 'Chaplet', icon: heartIMG }]
     }]
   });
 
@@ -994,6 +1138,7 @@ var mainMenu = new UI.Menu({
       case 1: prayers.show(); mainMenu.hide(); break;
       case 2: confession.show(); mainMenu.hide(); break;
       case 3: stations.show(); mainMenu.hide(); break;
+      case 4: chaplet.show(); mainMenu.hide(); break;
       default: 
         console.log('e.itemIndex is out of bounds: ' + e.itemIndex);
     } 
