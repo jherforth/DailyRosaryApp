@@ -980,7 +980,7 @@ var mainMenu = new UI.Menu({
       items: [
         { title: 'The Rosary', subtitle: 'Today\'s Mysteries', icon: rosaryIMG }, 
         { title: 'Prayers', subtitle: 'The Essentials', icon: prayersIMG },
-        { title: 'Confession', subtitle: 'How To Guide', icon: confessionIMG },
+        { title: 'Confession', subtitle: 'Quick Guide', icon: confessionIMG },
         { title: 'Stations of', subtitle: 'the Cross', icon: stationsIMG }]
     }]
   });
