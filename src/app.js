@@ -123,22 +123,22 @@ var background3 = new UI.Rect({
   backgroundColor: '#000000'
 });
 var button1 = new UI.Rect({
-  position: new Vector2(39,33),
+  position: new Vector2(40,33),
   size: new Vector2(4,14),
   backgroundColor: '#000000'
 });
 var button2 = new UI.Rect({
-  position: new Vector2(96,33),
+  position: new Vector2(95,33),
   size: new Vector2(4,14),
   backgroundColor: '#000000'
 });
 var button3 = new UI.Rect({
-  position: new Vector2(96,49),
+  position: new Vector2(95,49),
   size: new Vector2(4,14),
   backgroundColor: '#000000'
 });
 var button4 = new UI.Rect({
-  position: new Vector2(96,65),
+  position: new Vector2(95,65),
   size: new Vector2(4,14),
   backgroundColor: '#000000'
 });
@@ -147,8 +147,20 @@ var band = new UI.Rect({
   size: new Vector2(41,168),
   backgroundColor: '#555555'
 });
+var watch3 = new UI.Rect({
+  position: new Vector2(48,25),
+  size: new Vector2(8,61),
+  backgroundColor: '#000000'
+});
+var watch4 = new UI.Rect({
+  position: new Vector2(83,25),
+  size: new Vector2(8,61),
+  backgroundColor: '#000000'
+});
 
 splashScreen.add(band);
+splashScreen.add(watch3);
+splashScreen.add(watch4);
 splashScreen.add(watch1);
 splashScreen.add(watch2);
 splashScreen.add(chalice1);
