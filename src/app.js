@@ -1,4 +1,6 @@
 // DAILY ROSARY PEBBLE APP BY JASON HERFORTH
+// If you're looking for the code for Oremus, see the "Cathorist" branch. This
+// was my first attempt at an app. It's not efficient but it works!
 // 2016-02-12
 // V1.0
 
