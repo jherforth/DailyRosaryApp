@@ -32,7 +32,7 @@ var splashScreenTitle1 = new UI.Text({
 });
 
 var splashScreenTitle2 = new UI.Text({
- position: new Vector2(0, 0),
+ position: new Vector2(0, 90),
  size: new Vector2(144, 168),
  font: 'gothic-14-bold',
  text: "A Catholic Prayer Guide",
@@ -41,26 +41,13 @@ var splashScreenTitle2 = new UI.Text({
 });
 
 var splashScreenTitle3 = new UI.Text({
- position: new Vector2(0, 0),
+ position: new Vector2(0, 112),
  size: new Vector2(144, 168),
  font: 'gothic-14',
  text: "Oremus.Candidly.Us Press SELECT to Continue",
  textAlign: 'center',
  color: 'white'
 });
-
-//POSITION TEXT ON THE SPLASH SCREEN
-var titlePos1 = splashScreenTitle1.position();
-  titlePos1.y += 0;
-  splashScreenTitle1.position(titlePos1);
-
-var titlePos2 = splashScreenTitle2.position();
-  titlePos2.y += 90;
-  splashScreenTitle2.position(titlePos2);
-
-var titlePos3 = splashScreenTitle3.position();
-  titlePos3.y += 112;
-  splashScreenTitle3.position(titlePos3);
 
 //EUCHARIST IMAGE COMPONENTS
 var titleCrossH = new UI.Rect({
@@ -516,6 +503,11 @@ rosary.add(meditation2);
 rosary.add(meditation3);
 rosary.add(meditation4);
 rosary.add(meditation5);
+
+rosary.on('click','back',function(){
+      rosary.hide();
+      splashScreen.show();
+    });
 //  ++ ROSARY  ++
 //  ++ SCREEN  ++
 //  ++  END    ++
@@ -661,6 +653,11 @@ prayers.add(apostlesCreedTitle);
 prayers.add(apostlesCreed1);
 prayers.add(apostlesCreed2);
 prayers.add(apostlesCreed3);
+
+prayers.on('click','back',function(){
+      prayers.hide();
+      splashScreen.show();
+    });
 //  ++ PRAYERS ++
 //  ++ SCREEN  ++
 //  ++  END    ++
@@ -785,6 +782,11 @@ confession.add(confession6);
 confession.add(confession7);
 confession.add(confession8);
 confession.add(confession9);
+
+confession.on('click','back',function(){
+      confession.hide();
+      splashScreen.show();
+    });
 //  ++ CONFESSION ++
 //  ++   SCREEN   ++
 //  ++    END     ++
@@ -977,6 +979,11 @@ stations.add(station12);
 stations.add(station13);
 stations.add(station14);
 stations.add(stationEnd);
+
+stations.on('click','back',function(){
+      stations.hide();
+      splashScreen.show();
+    });
 //  ++ STATIONS ++
 //  ++ SCREEN  ++
 //  ++  END    ++
@@ -1119,6 +1126,11 @@ chaplet.add(chaplet7);
 chaplet.add(chaplet8);
 chaplet.add(chaplet9);
 chaplet.add(chapletEnd);
+
+chaplet.on('click','back',function(){
+      chaplet.hide();
+      splashScreen.show();
+    });
 //  ++ CHAPLET ++
 //  ++ SCREEN  ++
 //  ++  END    ++
@@ -1132,6 +1144,10 @@ var about = new UI.Card({
   scrollable: true
 });
 
+about.on('click','back',function(){
+      about.hide();
+      splashScreen.show();
+    });
 //  ++  ABOUT  ++
 //  ++ SCREEN  ++
 //  ++  END    ++
