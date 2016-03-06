@@ -1,6 +1,6 @@
 // CATHORIST PEBBLE APP BY JASON HERFORTH
 // 2016
-// V1.0
+// V1.1
 
 //LET'S GET THIS PARTY STARTED
 var UI = require('ui');
@@ -44,7 +44,7 @@ var splashScreenTitle3 = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
  font: 'gothic-14',
- text: "Candidly.Us/Orémus Press SELECT to Continue",
+ text: "Oremus.Candidly.Us Press SELECT to Continue",
  textAlign: 'center',
  color: 'white'
 });
@@ -1128,7 +1128,7 @@ chaplet.add(chapletEnd);
 //  ++  START  ++
 var about = new UI.Card({
   title: 'About Orémus',
-  body: 'This app was an experiment with plans to grow. I picked up Javascript and this is my first endevour. I hope to provide more functionality. Please checkout my website at candidly.us/oremus',
+  body: 'This app was an experiment with plans to grow. This is a purely JavaScript App. This is my first endeavor in programming. I hope to provide more functionality. To contribute checkout my website at candidly.us/oremus',
   scrollable: true
 });
 

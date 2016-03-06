@@ -4,7 +4,7 @@
         ""
     ],
     "companyName": "Candidly.Us",
-    "longName": "Daily Petros",
+    "longName": "Oremus",
     "projectType": "pebblejs",
     "resources": {
         "media": [
@@ -62,7 +62,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "Daily Petros",
+    "shortName": "Oremus",
     "targetPlatforms": [
         "aplite",
         "basalt"
