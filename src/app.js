@@ -11,8 +11,11 @@ var confessionIMG = 'images/confession.png';
 var prayersIMG = 'images/prayers.png';
 var stationsIMG = 'images/stations.png';
 var heartIMG = 'images/heart.png';
+var infoIMG = 'images/info.png';
 
-//SPLASH SCREEN
+//  ++ SPLASH ++ 
+//  ++ SCREEN ++
+//  ++ START  ++
 var splashScreen = new UI.Window({ 
   fulscreen: true,
   backgroundColor: '#0055AA'
@@ -22,8 +25,8 @@ var splashScreen = new UI.Window({
 var splashScreenTitle1 = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-24-bold',
- text: "Petrus Carpi",
+ font: 'roboto-condensed-21',
+ text: "Orémus",
  textAlign: 'center',
  color: 'white'
 });
@@ -31,8 +34,8 @@ var splashScreenTitle1 = new UI.Text({
 var splashScreenTitle2 = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18-bold',
- text: "Catholicism On Your Wrist.",
+ font: 'gothic-14-bold',
+ text: "A Catholic Prayer Guide",
  textAlign: 'center',
  color: 'white'
 });
@@ -41,7 +44,7 @@ var splashScreenTitle3 = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
  font: 'gothic-14',
- text: "Candidly.Us/PetrusCarpi SELECT to Continue",
+ text: "Candidly.Us/Orémus Press SELECT to Continue",
  textAlign: 'center',
  color: 'white'
 });
@@ -52,11 +55,11 @@ var titlePos1 = splashScreenTitle1.position();
   splashScreenTitle1.position(titlePos1);
 
 var titlePos2 = splashScreenTitle2.position();
-  titlePos2.y += 80;
+  titlePos2.y += 90;
   splashScreenTitle2.position(titlePos2);
 
 var titlePos3 = splashScreenTitle3.position();
-  titlePos3.y += 117;
+  titlePos3.y += 112;
   splashScreenTitle3.position(titlePos3);
 
 //EUCHARIST IMAGE COMPONENTS
@@ -73,7 +76,7 @@ var titleCrossV = new UI.Rect({
 var eucharist = new UI.Circle({
   position: new Vector2(69,45),
   radius: 8,
-  backgroundColor: '#FFFFAA'
+  backgroundColor: '#FFFFFF'
 });
 
 //CHALICE IMAGE COMPONENTS
@@ -189,6 +192,9 @@ splashScreen.add(splashScreenTitle1);
 splashScreen.add(splashScreenTitle2);
 splashScreen.add(splashScreenTitle3);
 splashScreen.show();
+//  ++ SPLASH ++ 
+//  ++ SCREEN ++
+//  ++   END  ++
 
 //  ++ ROSARY ++ 
 //  ++ SCREEN ++
@@ -1117,6 +1123,19 @@ chaplet.add(chapletEnd);
 //  ++ SCREEN  ++
 //  ++  END    ++
 
+//  ++  ABOUT  ++
+//  ++ SCREEN  ++
+//  ++  START  ++
+var about = new UI.Card({
+  title: 'About Orémus',
+  body: 'This app was an experiment with plans to grow. I picked up Javascript and this is my first endevour. I hope to provide more functionality. Please checkout my website at candidly.us/oremus',
+  scrollable: true
+});
+
+//  ++  ABOUT  ++
+//  ++ SCREEN  ++
+//  ++  END    ++
+
 //MAIN MENU SCREEN
 splashScreen.on('click', 'select', function(e) {
 
@@ -1131,7 +1150,8 @@ var mainMenu = new UI.Menu({
         { title: 'Prayers', subtitle: 'The Essentials', icon: prayersIMG },
         { title: 'Confession', subtitle: 'Quick Guide', icon: confessionIMG },
         { title: 'Stations of', subtitle: 'the Cross', icon: stationsIMG },
-        { title: 'Divine Mercy', subtitle: 'Chaplet', icon: heartIMG }]
+        { title: 'Divine Mercy', subtitle: 'Chaplet', icon: heartIMG },
+        { title: 'About Orémus', subtitle: 'Pebble App', icon: infoIMG }]
     }]
   });
 
@@ -1145,6 +1165,7 @@ var mainMenu = new UI.Menu({
       case 2: confession.show(); mainMenu.hide(); break;
       case 3: stations.show(); mainMenu.hide(); break;
       case 4: chaplet.show(); mainMenu.hide(); break;
+      case 5: about.show(); mainMenu.hide(); break;
       default: 
         console.log('e.itemIndex is out of bounds: ' + e.itemIndex);
     } 

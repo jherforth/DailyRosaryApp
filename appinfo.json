@@ -4,7 +4,7 @@
         ""
     ],
     "companyName": "Candidly.Us",
-    "longName": "Cathorist",
+    "longName": "Daily Petros",
     "projectType": "pebblejs",
     "resources": {
         "media": [
@@ -28,6 +28,11 @@
                 "file": "fonts/UbuntuMono-Regular.ttf",
                 "name": "MONO_FONT_14",
                 "type": "font"
+            },
+            {
+                "file": "images/info.png",
+                "name": "IMAGES_INFO_PNG",
+                "type": "bitmap"
             },
             {
                 "file": "images/heart.png",
@@ -57,7 +62,7 @@
         ]
     },
     "sdkVersion": "3",
-    "shortName": "Cathorist",
+    "shortName": "Daily Petros",
     "targetPlatforms": [
         "aplite",
         "basalt"
