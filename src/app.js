@@ -49,106 +49,106 @@ var splashScreenTitle3 = new UI.Text({
 
 //EUCHARIST IMAGE COMPONENTS
 var titleCrossH = new UI.Rect({
-  position: new Vector2(66,44),
+  position: new Vector2(68,44),
   size: new Vector2(8,2),
   backgroundColor: '#AAAA55'
 });
 var titleCrossV = new UI.Rect({
-  position: new Vector2(69,41),
+  position: new Vector2(71,41),
   size: new Vector2(2,8),
   backgroundColor: '#AAAA55'
 });
 var eucharist = new UI.Circle({
-  position: new Vector2(69,45),
+  position: new Vector2(71,45),
   radius: 8,
   backgroundColor: '#FFFFFF'
 });
 
 //CHALICE IMAGE COMPONENTS
 var background1 = new UI.Rect({
-  position: new Vector2(55,37),
+  position: new Vector2(57,37),
   size: new Vector2(30,15),
   backgroundColor: '#55AAFF'
 });
 var chalice1 = new UI.Circle({
-  position: new Vector2(69,49),
+  position: new Vector2(71,49),
   radius: 10,
   backgroundColor: '#FFFF00'
 });
 var chalice2 = new UI.Circle({
-  position: new Vector2(69,60),
+  position: new Vector2(71,60),
   radius: 2,
   backgroundColor: '#FFFF00'
 });
 var chalice3 = new UI.Circle({
-  position: new Vector2(69,65),
+  position: new Vector2(71,65),
   radius: 2,
   backgroundColor: '#FFFF00'
 });
 var chalice4 = new UI.Circle({
-  position: new Vector2(69,73),
+  position: new Vector2(71,73),
   radius: 6,
   backgroundColor: '#FFFF00'
 });
 var background2 = new UI.Rect({
-  position: new Vector2(55,73),
+  position: new Vector2(57,73),
   size: new Vector2(30,7),
   backgroundColor: '#55AAFF'
 });
 
 //WATCH IMAGE COMPONENTS
 var watch1 = new UI.Rect({
-  position: new Vector2(43,28),
+  position: new Vector2(45,28),
   size: new Vector2(53,55),
   backgroundColor: '#000000'
 });
 var watch2 = new UI.Rect({
-  position: new Vector2(49,35),
+  position: new Vector2(51,35),
   size: new Vector2(41,41),
   backgroundColor: '#55AAFF'
 });
 var background3 = new UI.Rect({
-  position: new Vector2(55,76),
+  position: new Vector2(57,76),
   size: new Vector2(30,4),
   backgroundColor: '#000000'
 });
 var button1 = new UI.Rect({
-  position: new Vector2(40,33),
+  position: new Vector2(42,33),
   size: new Vector2(4,14),
   backgroundColor: '#000000'
 });
 var button2 = new UI.Rect({
-  position: new Vector2(95,33),
+  position: new Vector2(97,33),
   size: new Vector2(4,14),
   backgroundColor: '#000000'
 });
 var button3 = new UI.Rect({
-  position: new Vector2(95,49),
+  position: new Vector2(97,49),
   size: new Vector2(4,14),
   backgroundColor: '#000000'
 });
 var button4 = new UI.Rect({
-  position: new Vector2(95,65),
+  position: new Vector2(97,65),
   size: new Vector2(4,14),
   backgroundColor: '#000000'
 });
 var band = new UI.Rect({
-  position: new Vector2(49,0),
+  position: new Vector2(51,0),
   size: new Vector2(41,168),
   backgroundColor: '#555555'
 });
 var band1 = new UI.Rect({
-  position: new Vector2(48,0),
+  position: new Vector2(50,0),
   size: new Vector2(43,168),
   backgroundColor: '#000000'
 });
 var watch3 = new UI.Rect({
-  position: new Vector2(48,25),
+  position: new Vector2(50,25),
   size: new Vector2(8,61),
   backgroundColor: '#000000'
 });
 var watch4 = new UI.Rect({
-  position: new Vector2(83,25),
+  position: new Vector2(85,25),
   size: new Vector2(8,61),
   backgroundColor: '#000000'
 });
