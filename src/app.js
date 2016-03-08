@@ -503,11 +503,6 @@ rosary.add(meditation2);
 rosary.add(meditation3);
 rosary.add(meditation4);
 rosary.add(meditation5);
-
-rosary.on('click','back',function(){
-      rosary.hide();
-      splashScreen.show();
-    });
 //  ++ ROSARY  ++
 //  ++ SCREEN  ++
 //  ++  END    ++
@@ -653,11 +648,6 @@ prayers.add(apostlesCreedTitle);
 prayers.add(apostlesCreed1);
 prayers.add(apostlesCreed2);
 prayers.add(apostlesCreed3);
-
-prayers.on('click','back',function(){
-      prayers.hide();
-      splashScreen.show();
-    });
 //  ++ PRAYERS ++
 //  ++ SCREEN  ++
 //  ++  END    ++
@@ -782,11 +772,6 @@ confession.add(confession6);
 confession.add(confession7);
 confession.add(confession8);
 confession.add(confession9);
-
-confession.on('click','back',function(){
-      confession.hide();
-      splashScreen.show();
-    });
 //  ++ CONFESSION ++
 //  ++   SCREEN   ++
 //  ++    END     ++
@@ -979,11 +964,6 @@ stations.add(station12);
 stations.add(station13);
 stations.add(station14);
 stations.add(stationEnd);
-
-stations.on('click','back',function(){
-      stations.hide();
-      splashScreen.show();
-    });
 //  ++ STATIONS ++
 //  ++ SCREEN  ++
 //  ++  END    ++
@@ -1126,11 +1106,6 @@ chaplet.add(chaplet7);
 chaplet.add(chaplet8);
 chaplet.add(chaplet9);
 chaplet.add(chapletEnd);
-
-chaplet.on('click','back',function(){
-      chaplet.hide();
-      splashScreen.show();
-    });
 //  ++ CHAPLET ++
 //  ++ SCREEN  ++
 //  ++  END    ++
