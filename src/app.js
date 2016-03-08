@@ -13,9 +13,7 @@ var stationsIMG = 'images/stations.png';
 var heartIMG = 'images/heart.png';
 var infoIMG = 'images/info.png';
 
-//  ++ SPLASH ++ 
-//  ++ SCREEN ++
-//  ++ START  ++
+//  ++ SPLASH SCREEN START ++ 
 var splashScreen = new UI.Window({ 
   fulscreen: true,
   backgroundColor: '#0055AA'
@@ -179,13 +177,8 @@ splashScreen.add(splashScreenTitle1);
 splashScreen.add(splashScreenTitle2);
 splashScreen.add(splashScreenTitle3);
 splashScreen.show();
-//  ++ SPLASH ++ 
-//  ++ SCREEN ++
-//  ++   END  ++
 
-//  ++ ROSARY ++ 
-//  ++ SCREEN ++
-//  ++ START  ++
+//  ++ ROSARY SCREEN START ++ 
 //ROSARY COMPONENT BLANK VARIABLES
 var day1 ="";
 var day2 ="";
@@ -399,13 +392,8 @@ rosary.add(meditation2);
 rosary.add(meditation3);
 rosary.add(meditation4);
 rosary.add(meditation5);
-//  ++ ROSARY  ++
-//  ++ SCREEN  ++
-//  ++  END    ++
 
-//  ++ PRAYERS ++
-//  ++ SCREEN  ++
-//  ++  START  ++
+//  ++ PRAYERS SCREEN START ++
 var prayers = new UI.Window({ 
   fullscreen: true, 
   backgroundColor: 'white', 
@@ -544,13 +532,8 @@ prayers.add(apostlesCreedTitle);
 prayers.add(apostlesCreed1);
 prayers.add(apostlesCreed2);
 prayers.add(apostlesCreed3);
-//  ++ PRAYERS ++
-//  ++ SCREEN  ++
-//  ++  END    ++
 
-//  ++ CONFESSION ++
-//  ++   SCREEN   ++
-//  ++   START    ++
+//  ++ CONFESSION SCREEN START ++
 var confession = new UI.Window({ 
   fullscreen: true, 
   backgroundColor: "black", 
@@ -668,13 +651,8 @@ confession.add(confession6);
 confession.add(confession7);
 confession.add(confession8);
 confession.add(confession9);
-//  ++ CONFESSION ++
-//  ++   SCREEN   ++
-//  ++    END     ++
 
-//  ++ STATIONS ++
-//  ++ SCREEN  ++
-//  ++  START  ++
+//  ++ STATIONS SCREEN START++
 var stations = new UI.Window({ 
   fullscreen: true, 
   backgroundColor: 'white', 
@@ -860,13 +838,8 @@ stations.add(station12);
 stations.add(station13);
 stations.add(station14);
 stations.add(stationEnd);
-//  ++ STATIONS ++
-//  ++ SCREEN  ++
-//  ++  END    ++
 
-//  ++ CHAPLET ++
-//  ++ SCREEN  ++
-//  ++  START  ++
+//  ++ CHAPLET SCREEN START++
 var chaplet = new UI.Window({ 
   fullscreen: true, 
   backgroundColor: 'white', 
@@ -1002,13 +975,8 @@ chaplet.add(chaplet7);
 chaplet.add(chaplet8);
 chaplet.add(chaplet9);
 chaplet.add(chapletEnd);
-//  ++ CHAPLET ++
-//  ++ SCREEN  ++
-//  ++  END    ++
 
-//  ++  ABOUT  ++
-//  ++ SCREEN  ++
-//  ++  START  ++
+//  ++  ABOUT SCREEN START ++
 var about = new UI.Card({
   title: 'About Orémus',
   body: 'This app was an experiment with plans to grow. This is a purely JavaScript App. This is my first endeavor in programming. I hope to provide more functionality. To contribute checkout my website at candidly.us/oremus',
@@ -1019,11 +987,8 @@ about.on('click','back',function(){
       about.hide();
       splashScreen.show();
     });
-//  ++  ABOUT  ++
-//  ++ SCREEN  ++
-//  ++  END    ++
 
-//MAIN MENU SCREEN
+//  ++  MAIN MENU SCREEN START ++
 splashScreen.on('click', 'select', function(e) {
 
 var mainMenu = new UI.Menu({
