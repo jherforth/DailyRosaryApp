@@ -194,7 +194,6 @@ var day4 ="";
 var day5 ="";
 var mystery ="";
 var txtcolor = '';
-var imgColor = '';
 var titleBG = '';
 
 //MYSTERIES TEXT
@@ -232,7 +231,6 @@ switch (new Date().getDay()) {
         day5 = glorious5;
         txtcolor = '#FFFFFF';
         mystery = "GLORIOUS";
-        imgColor = '#FFFFFF';
         titleBG = '#AA55AA';
         break;
     case 1:
@@ -243,7 +241,6 @@ switch (new Date().getDay()) {
         day5 = joyful5;
         txtcolor = '#FFFFFF';
         mystery = "JOYFUL";
-        imgColor = '#FFFFFF';
         titleBG = '#005500';
         break;
     case 2:
@@ -254,7 +251,6 @@ switch (new Date().getDay()) {
         day5 = sorrowful5;
         txtcolor = '#FFFFFF';
         mystery = "SORROWFUL";
-        imgColor = '#FFFFFF';
         titleBG = '#AA0000';
         break;
     case 3:
@@ -265,7 +261,6 @@ switch (new Date().getDay()) {
         day5 = glorious5;
         txtcolor = '#FFFFFF';
         mystery = "GLORIOUS";
-        imgColor = '#FFFFFF';
         titleBG = '#AA55AA';
         break;
     case 4:
@@ -276,7 +271,6 @@ switch (new Date().getDay()) {
         day5 = luminous5;
         txtcolor = '#000000';
         mystery = "LUMINOUS";
-        imgColor = '#000000';
         titleBG = '#55AAAA';
         break;
     case 5:
@@ -287,7 +281,6 @@ switch (new Date().getDay()) {
         day5 = sorrowful5;
         txtcolor = '#FFFFFF';
         mystery = "SORROWFUL";
-        imgColor = '#FFFFFF';
         titleBG = '#AA0000';
         break;
     case 6:
@@ -298,7 +291,6 @@ switch (new Date().getDay()) {
         day5 = joyful5;
         txtcolor = '#FFFFFF';
         mystery = "JOYFUL";
-        imgColor = '#FFFFFF';
         titleBG = '#005500';
         break;
 }
@@ -319,9 +311,16 @@ var dailyRosary = new UI.Text({
  color: txtcolor
 });
 
+var rosaryImage = new UI.Image({
+  position: new Vector2(0, 180),
+  size: new Vector2(144, 168),
+  image: 'images/rosaryb.png',
+  compositing: 'set'
+});
+
 var titeBackgound = new UI.Rect({
   position: new Vector2(0, 0),
-  size: new Vector2(144, 70),
+  size: new Vector2(144, 38),
   backgroundColor: titleBG
 });
 
@@ -373,131 +372,28 @@ position: new Vector2(0, 0),
 
 //POSITIONS EACH MYSTERY TEXT
 var pos1 = meditation1.position();
-  pos1.y += 70;
+  pos1.y += 40;
   meditation1.position(pos1);
 
 var pos2 = meditation2.position();
-  pos2.y += 110;
+  pos2.y += 80;
   meditation2.position(pos2);
 
 var pos3 = meditation3.position();
-  pos3.y += 150;
+  pos3.y += 120;
   meditation3.position(pos3);
 
 var pos4 = meditation4.position();
-  pos4.y += 190;
+  pos4.y += 160;
   meditation4.position(pos4);
 
 var pos5 = meditation5.position();
-  pos5.y += 230;
+  pos5.y += 200;
   meditation5.position(pos5);
-
-//BEADS IMAGE COMPONENTS
-//MYSTERY BEADS
-var tlbead = new UI.Circle({
-  position: new Vector2(57,30),
-  radius: 3,
-  backgroundColor: imgColor
-});
-var trbead = new UI.Circle({
-  position: new Vector2(85,30),
-  radius: 3,
-  backgroundColor: imgColor
-});
-var brbead = new UI.Circle({
-  position: new Vector2(85,58),
-  radius: 3,
-  backgroundColor: imgColor
-});
-var blbead = new UI.Circle({
-  position: new Vector2(57,58),
-  radius: 3,
-  backgroundColor: imgColor
-});
-var cbead = new UI.Circle({
-  position: new Vector2(71,36),
-  radius: 3,
-  backgroundColor: imgColor
-});
-
-//TOP ROW
-var tbead1 = new UI.Circle({
-  position: new Vector2(66,30),
-  radius: 2,
-  backgroundColor: imgColor
-});
-var tbead2 = new UI.Circle({
-  position: new Vector2(76,30),
-  radius: 2,
-  backgroundColor: imgColor
-});
-
-//RIGHT ROW
-var rbead1 = new UI.Circle({
-  position: new Vector2(85,39),
-  radius: 2,
-  backgroundColor: imgColor
-});
-var rbead2 = new UI.Circle({
-  position: new Vector2(85,48),
-  radius: 2,
-  backgroundColor: imgColor
-});
-
-//LEFT ROW
-var lbead1 = new UI.Circle({
-  position: new Vector2(57,39),
-  radius: 2,
-  backgroundColor: imgColor
-});
-var lbead2 = new UI.Circle({
-  position: new Vector2(57,48),
-  radius: 2,
-  backgroundColor: imgColor
-});
-
-//BOTTOM ROW
-var bbead1 = new UI.Circle({
-  position: new Vector2(66,58),
-  radius: 2,
-  backgroundColor: imgColor
-});
-var bbead2 = new UI.Circle({
-  position: new Vector2(76,58),
-  radius: 2,
-  backgroundColor: imgColor
-});
-
-//CROSS IMAGE COMPONENTS
-var hcross = new UI.Rect({
-  position: new Vector2(65,46),
-  size: new Vector2(12,4),
-  backgroundColor: imgColor
-});
-
-var vcross = new UI.Rect({
-  position: new Vector2(69,42),
-  size: new Vector2(4,14),
-  backgroundColor: imgColor
-});
 
 rosary.add(titeBackgound);
 rosary.add(dailyRosary);
-rosary.add(tlbead);
-rosary.add(trbead);
-rosary.add(brbead);
-rosary.add(blbead);
-rosary.add(cbead);
-rosary.add(tbead1);
-rosary.add(tbead2);
-rosary.add(rbead1);
-rosary.add(rbead2);
-rosary.add(lbead1);
-rosary.add(lbead2);
-rosary.add(bbead1);
-rosary.add(bbead2);
-rosary.add(hcross);
-rosary.add(vcross);
+rosary.add(rosaryImage);
 rosary.add(meditation1);
 rosary.add(meditation2);
 rosary.add(meditation3);

@@ -30,6 +30,11 @@
                 "type": "font"
             },
             {
+                "file": "images/rosaryb.png",
+                "name": "IMAGES_ROSARYB_PNG",
+                "type": "bitmap"
+            },
+            {
                 "file": "images/info.png",
                 "name": "IMAGES_INFO_PNG",
                 "type": "bitmap"
