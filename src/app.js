@@ -32,8 +32,8 @@ var splashScreenTitle1 = new UI.Text({
 var splashScreenTitle2 = new UI.Text({
  position: new Vector2(0, 90),
  size: new Vector2(144, 168),
- font: 'gothic-14-bold',
- text: "A Catholic Prayer Guide",
+ font: 'gothic-18-bold',
+ text: "Let Us Pray",
  textAlign: 'center',
  color: 'white'
 });
