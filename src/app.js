@@ -16,7 +16,7 @@ var infoIMG = 'images/info.png';
 //  ++ SPLASH SCREEN START ++ 
 var splashScreen = new UI.Window({ 
   fulscreen: true,
-  backgroundColor: '#0055AA'
+  backgroundColor: '#00AAFF'
   });
 
 //SPLASH SCREEN FORMATED TEXT
@@ -29,6 +29,15 @@ var splashScreenTitle1 = new UI.Text({
  color: 'white'
 });
 
+var splashScreenTitle1a = new UI.Text({
+ position: new Vector2(1, 1),
+ size: new Vector2(144, 168),
+ font: 'roboto-condensed-21',
+ text: "Orémus",
+ textAlign: 'center',
+ color: 'black'
+});
+
 var splashScreenTitle2 = new UI.Text({
  position: new Vector2(0, 90),
  size: new Vector2(144, 168),
@@ -38,13 +47,31 @@ var splashScreenTitle2 = new UI.Text({
  color: 'white'
 });
 
+var splashScreenTitle2a = new UI.Text({
+ position: new Vector2(1, 91),
+ size: new Vector2(144, 168),
+ font: 'gothic-18-bold',
+ text: "Let Us Pray",
+ textAlign: 'center',
+ color: 'black'
+});
+
 var splashScreenTitle3 = new UI.Text({
  position: new Vector2(0, 112),
  size: new Vector2(144, 168),
- font: 'gothic-14',
- text: "Oremus.Candidly.Us Press SELECT to Continue",
+ font: 'gothic-14-bold',
+ text: "Oremus.Candidly.Us SELECT to Continue",
  textAlign: 'center',
  color: 'white'
+});
+
+var splashScreenTitle3a = new UI.Text({
+ position: new Vector2(1, 113),
+ size: new Vector2(144, 168),
+ font: 'gothic-14-bold',
+ text: "Oremus.Candidly.Us SELECT to Continue",
+ textAlign: 'center',
+ color: 'black'
 });
 
 //EUCHARIST IMAGE COMPONENTS
@@ -65,10 +92,10 @@ var eucharist = new UI.Circle({
 });
 
 //CHALICE IMAGE COMPONENTS
-var background1 = new UI.Rect({
+var screen1 = new UI.Rect({
   position: new Vector2(57,37),
   size: new Vector2(30,15),
-  backgroundColor: '#55AAFF'
+  backgroundColor: '#0055AA'
 });
 var chalice1 = new UI.Circle({
   position: new Vector2(71,49),
@@ -90,10 +117,10 @@ var chalice4 = new UI.Circle({
   radius: 6,
   backgroundColor: '#FFFF00'
 });
-var background2 = new UI.Rect({
+var screen2 = new UI.Rect({
   position: new Vector2(57,73),
   size: new Vector2(30,7),
-  backgroundColor: '#55AAFF'
+  backgroundColor: '#0055AA'
 });
 
 //WATCH IMAGE COMPONENTS
@@ -102,10 +129,10 @@ var watch1 = new UI.Rect({
   size: new Vector2(53,55),
   backgroundColor: '#000000'
 });
-var watch2 = new UI.Rect({
+var screen3 = new UI.Rect({
   position: new Vector2(51,35),
   size: new Vector2(41,41),
-  backgroundColor: '#55AAFF'
+  backgroundColor: '#0055AA'
 });
 var background3 = new UI.Rect({
   position: new Vector2(57,76),
@@ -158,23 +185,26 @@ splashScreen.add(band);
 splashScreen.add(watch3);
 splashScreen.add(watch4);
 splashScreen.add(watch1);
-splashScreen.add(watch2);
+splashScreen.add(screen3);
 splashScreen.add(chalice1);
 splashScreen.add(chalice3);
 splashScreen.add(chalice4);
-splashScreen.add(background1);
+splashScreen.add(screen1);
 splashScreen.add(eucharist);
 splashScreen.add(titleCrossH);
 splashScreen.add(titleCrossV);
 splashScreen.add(chalice2);
-splashScreen.add(background2);
+splashScreen.add(screen2);
 splashScreen.add(background3);
 splashScreen.add(button1);
 splashScreen.add(button2);
 splashScreen.add(button3);
 splashScreen.add(button4);
+splashScreen.add(splashScreenTitle1a);
 splashScreen.add(splashScreenTitle1);
+splashScreen.add(splashScreenTitle2a);
 splashScreen.add(splashScreenTitle2);
+splashScreen.add(splashScreenTitle3a);
 splashScreen.add(splashScreenTitle3);
 splashScreen.show();
 
@@ -199,7 +229,7 @@ var glorious5 = "V. The Coronation of Mary";
 var luminous1 = "I. The Baptism in the Jordan";
 var luminous2 = "II. The Wedding Feast at Cana";
 var luminous3 = "III. The Proclamation of the Kingdom";
-var luminous4 = "IV. The Transfiguration on";
+var luminous4 = "IV. The Transfiguration on the mountain";
 var luminous5 = "V. The Institution of the Eucharist";
 
 var sorrowful1 = "I. Agony of Jesus in the Garden";
@@ -632,15 +662,6 @@ var confession8 = new UI.Text({
   color: 'white'
 });
 
-var confession9 = new UI.Text({
- position: new Vector2(0, 675),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "6) Return to the pew and thank God for His boundless mercy. Start your penance.",
- textAlign: 'center',
- color: 'white'
-});
-
 confession.add(confessionTitle);
 confession.add(confession1);
 confession.add(confession2);
@@ -650,7 +671,6 @@ confession.add(confession5);
 confession.add(confession6);
 confession.add(confession7);
 confession.add(confession8);
-confession.add(confession9);
 
 //  ++ STATIONS SCREEN START++
 var stations = new UI.Window({ 
@@ -679,14 +699,14 @@ var stationsHeaderBG = new UI.Rect({
 var stationsOpening = new UI.Text({
  position: new Vector2(0, 65),
  size: new Vector2(144, 168),
- font: 'gothic-18-bold',
- text: "Begin by reciting the Act of Contrition",
+ font: 'gothic-18',
+ text: "Begin with the Sign of the Cross and by reciting the Act of Contrition",
  textAlign: 'center',
  color: 'black'
 });
 
 var station1 = new UI.Text({
- position: new Vector2(0, 125),
+ position: new Vector2(0, 130),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The First Station - Jesus is condemned to death. (Mark 15:1-15) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -695,7 +715,7 @@ var station1 = new UI.Text({
 });
 
 var station2 = new UI.Text({
- position: new Vector2(0, 235),
+ position: new Vector2(0, 240),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Second Station - Jesus carries His cross. (John 19:13-17) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -704,7 +724,7 @@ var station2 = new UI.Text({
 });
 
 var station3 = new UI.Text({
- position: new Vector2(0, 345),
+ position: new Vector2(0, 350),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Third Station - Jesus falls for the first time. (Isaiah 53:4-7) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -713,7 +733,7 @@ var station3 = new UI.Text({
 });
 
 var station4 = new UI.Text({
- position: new Vector2(0, 455),
+ position: new Vector2(0, 460),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Fourth Station - Jesus meets his Mother. (Luke 2:25-40) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -722,7 +742,7 @@ var station4 = new UI.Text({
 });
 
 var station5 = new UI.Text({
- position: new Vector2(0, 560),
+ position: new Vector2(0, 565),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Fifth Station - Simon of Cyrene helps Jesus. (Mark 15:21) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -731,7 +751,7 @@ var station5 = new UI.Text({
 });
 
 var station6 = new UI.Text({
- position: new Vector2(0, 665),
+ position: new Vector2(0, 670),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Sixth Station - Veronica wipes the face of Jesus. (Matthew 25:40) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -740,7 +760,7 @@ var station6 = new UI.Text({
 });
 
 var station7 = new UI.Text({
- position: new Vector2(0, 788),
+ position: new Vector2(0, 793),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Seventh Station - Jesus falls the second time. (Psalm 38:6-22) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -749,7 +769,7 @@ var station7 = new UI.Text({
 });
 
 var station8 = new UI.Text({
- position: new Vector2(0, 898),
+ position: new Vector2(0, 903),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Eighth Station - Jesus consoles the women of Jerusalem. (Luke 23:27-31) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -758,7 +778,7 @@ var station8 = new UI.Text({
 });
 
 var station9 = new UI.Text({
- position: new Vector2(0, 1020),
+ position: new Vector2(0, 1025),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Ninth Station - Jesus falls the third time. (Psalm 37:23-24) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -767,7 +787,7 @@ var station9 = new UI.Text({
 });
 
 var station10 = new UI.Text({
- position: new Vector2(0, 1125),
+ position: new Vector2(0, 1130),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Tenth Station - Jesus is stripped of his garments. (John 19:23-24) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -776,7 +796,7 @@ var station10 = new UI.Text({
 });
 
 var station11 = new UI.Text({
- position: new Vector2(0, 1243),
+ position: new Vector2(0, 1252),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Eleventh Station - Jesus is nailed to the Cross. (Luke 23:33-43) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -785,7 +805,7 @@ var station11 = new UI.Text({
 });
 
 var station12 = new UI.Text({
- position: new Vector2(0, 1345),
+ position: new Vector2(0, 1350),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Twelfth Station - Jesus dies on the Cross. (John 19:28-37) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -794,7 +814,7 @@ var station12 = new UI.Text({
 });
 
 var station13 = new UI.Text({
- position: new Vector2(0, 1453),
+ position: new Vector2(0, 1458),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Thirteenth Station - Jesus is taken down from the Cross. (John 19:38-40) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -803,7 +823,7 @@ var station13 = new UI.Text({
 });
 
 var station14 = new UI.Text({
- position: new Vector2(0, 1570),
+ position: new Vector2(0, 1575),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "The Fourteenth Station - Jesus is laid in the Tomb. (Matthew 27:57-61) + Our Father + Hail Mary + Glory Be to the Father +",
@@ -812,7 +832,7 @@ var station14 = new UI.Text({
 });
 
 var stationEnd = new UI.Text({
- position: new Vector2(0, 1690),
+ position: new Vector2(0, 1695),
  size: new Vector2(144, 168),
  font: 'gothic-18',
  text: "This was the traditional Stations of the Cross, there is an alternative offered by Saint Pope John Paul II.",
@@ -979,7 +999,7 @@ chaplet.add(chapletEnd);
 //  ++  ABOUT SCREEN START ++
 var about = new UI.Card({
   title: 'About Orémus',
-  body: 'This app was an experiment with plans to grow. This is a purely JavaScript App. This is my first endeavor in programming. I hope to provide more functionality. To contribute checkout my website at candidly.us/oremus',
+  body: 'This app was an experiment with plans to grow. This is a purely JavaScript App. This is my first endeavor in programming. I hope to provide more functionality. To contribute checkout my website at oremus.candidly.us',
   scrollable: true
 });
 
@@ -1012,11 +1032,11 @@ var mainMenu = new UI.Menu({
   
   mainMenu.on('select', function(e) {
    switch(e.itemIndex) {
-      case 0: rosary.show(); mainMenu.hide(); break;
-      case 1: prayers.show(); mainMenu.hide(); break;
-      case 2: confession.show(); mainMenu.hide(); break;
-      case 3: stations.show(); mainMenu.hide(); break;
-      case 4: chaplet.show(); mainMenu.hide(); break;
+      case 0: rosary.show(); break;
+      case 1: prayers.show(); break;
+      case 2: confession.show(); break;
+      case 3: stations.show(); break;
+      case 4: chaplet.show(); break;
       case 5: about.show(); mainMenu.hide(); break;
       default: 
         console.log('e.itemIndex is out of bounds: ' + e.itemIndex);
