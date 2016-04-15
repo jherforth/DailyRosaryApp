@@ -39,8 +39,8 @@ var intentTitle = new UI.Text({
 
 var intentText = new UI.Text({
  position: new Vector2(0, 65),
- size: new Vector2(144, 168),
- font: 'gothic-14',
+ size: new Vector2(144, 550),
+ font: 'gothic-18',
  text: "Loading Text",
  textAlign: 'center',
  color: 'black'
