@@ -30,6 +30,11 @@
                 "type": "font"
             },
             {
+                "file": "images/pope.png",
+                "name": "IMAGES_POPE_PNG",
+                "type": "bitmap"
+            },
+            {
                 "file": "images/rosaryb.png",
                 "name": "IMAGES_ROSARYB_PNG",
                 "type": "bitmap"

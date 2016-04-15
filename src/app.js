@@ -1,17 +1,93 @@
 // CATHORIST PEBBLE APP BY JASON HERFORTH
 // 2016
-// V1.1
+// V1.2
 
 //LET'S GET THIS PARTY STARTED
 var UI = require('ui');
 var Vector2 = require('vector2');
+var ajax = require('ajax');
 
 var rosaryIMG = 'images/rosary.png';
 var confessionIMG = 'images/confession.png';
 var prayersIMG = 'images/prayers.png';
 var stationsIMG = 'images/stations.png';
 var heartIMG = 'images/heart.png';
+var popeIMG = 'images/pope.png';
 var infoIMG = 'images/info.png';
+
+// ++ START INTENTIONS SCREEN ++
+var intentScreen = new UI.Window({ 
+  fullscreen: true, 
+  backgroundColor: 'white', 
+  scrollable: true
+  });
+
+var intentHeaderBG = new UI.Rect({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 60),
+  backgroundColor: '#AAAA55'
+});
+
+var intentTitle = new UI.Text({
+ position: new Vector2(0, 0),
+ size: new Vector2(144, 168),
+ font: 'gothic-24-bold',
+ text: "Fetching Intentions",
+ textAlign: 'center',
+ color: 'black'
+});
+
+var intentText = new UI.Text({
+ position: new Vector2(0, 65),
+ size: new Vector2(144, 168),
+ font: 'gothic-14',
+ text: "Loading Text",
+ textAlign: 'center',
+ color: 'black'
+});
+
+// SET THE DATE
+var todaysDate = new Date();
+var month = todaysDate.getMonth();
+var day = todaysDate.getDate();
+var year = todaysDate.getFullYear();
+
+// JSON URL
+var URL = 'http://oremus.candidly.us/JSON/'+ year +'/intentions.js';
+
+// PHONE HOME
+ajax(
+  { 
+    url: URL,
+    type: 'json'
+  },
+  function(data) {
+    console.log('Success');
+    
+    var universal = data.intention1;
+    var evangelization = data.intention2;
+    var text1 = data.text1[month];
+    var text2 = data.text2[month];
+    var theTitle = "Pope's Montly Intentions";
+    
+    // WAH LAH!
+    intentTitle.text(theTitle);
+    intentText.text(universal + ": " + text1 + "\n\n" + evangelization + ": " + text2);  
+  },
+  
+  // DUN BROKE IT
+  function(error) {
+    console.log('Error' + error);
+   
+    intentTitle.text('Failed.');
+    intentText.text(error);
+  }
+);
+
+// DISPLAY CARD
+intentScreen.add(intentHeaderBG);
+intentScreen.add(intentTitle);
+intentScreen.add(intentText);
 
 //  ++ SPLASH SCREEN START ++ 
 var splashScreen = new UI.Window({ 
@@ -226,7 +302,7 @@ var glorious3 = "III. The Descent of the Holy Ghost";
 var glorious4 = "IV. The Assumption of Mary into Heaven";
 var glorious5 = "V. The Coronation of Mary";
 
-var luminous1 = "I. The Baptism in the Jordan";
+var luminous1 = "I. The Lord's Baptism in the Jordan";
 var luminous2 = "II. The Wedding Feast at Cana";
 var luminous3 = "III. The Proclamation of the Kingdom";
 var luminous4 = "IV. The Transfiguration on the mountain";
@@ -321,29 +397,22 @@ switch (new Date().getDay()) {
 var rosary = new UI.Window({ 
   fullscreen: true,
   backgroundColor: 'white',
-  scrollable: true 
+  scrollable: false 
 });
 
 //DAILY ROSARY TITLE
 var dailyRosary = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-24-bold',
+ font: 'gothic-14-bold',
  text: mystery,
  textAlign: 'center',
  color: txtcolor
 });
 
-var rosaryImage = new UI.Image({
-  position: new Vector2(0, 180),
-  size: new Vector2(144, 168),
-  image: 'images/rosaryb.png',
-  compositing: 'set'
-});
-
 var titeBackgound = new UI.Rect({
   position: new Vector2(0, 0),
-  size: new Vector2(144, 38),
+  size: new Vector2(144, 20),
   backgroundColor: titleBG
 });
 
@@ -351,7 +420,7 @@ var titeBackgound = new UI.Rect({
 var meditation1 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18',
+ font: 'gothic-14',
  text: day1,
  textAlign: 'center',
  color: 'black'
@@ -360,7 +429,7 @@ position: new Vector2(0, 0),
 var meditation2 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18',
+ font: 'gothic-14',
  text: day2,
  textAlign: 'center',
  color: 'black'
@@ -369,7 +438,7 @@ position: new Vector2(0, 0),
 var meditation3 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18',
+ font: 'gothic-14',
  text: day3,
  textAlign: 'center',
  color: 'black'
@@ -378,7 +447,7 @@ position: new Vector2(0, 0),
 var meditation4 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18',
+ font: 'gothic-14',
  text: day4,
  textAlign: 'center',
  color: 'black'
@@ -387,7 +456,7 @@ position: new Vector2(0, 0),
 var meditation5 = new UI.Text({
 position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-18',
+ font: 'gothic-14',
  text: day5,
  textAlign: 'center',
  color: 'black'
@@ -395,28 +464,27 @@ position: new Vector2(0, 0),
 
 //POSITIONS EACH MYSTERY TEXT
 var pos1 = meditation1.position();
-  pos1.y += 40;
+  pos1.y += 22;
   meditation1.position(pos1);
 
 var pos2 = meditation2.position();
-  pos2.y += 80;
+  pos2.y += 50;
   meditation2.position(pos2);
 
 var pos3 = meditation3.position();
-  pos3.y += 120;
+  pos3.y += 78;
   meditation3.position(pos3);
 
 var pos4 = meditation4.position();
-  pos4.y += 160;
+  pos4.y += 106;
   meditation4.position(pos4);
 
 var pos5 = meditation5.position();
-  pos5.y += 200;
+  pos5.y += 134;
   meditation5.position(pos5);
 
 rosary.add(titeBackgound);
 rosary.add(dailyRosary);
-rosary.add(rosaryImage);
 rosary.add(meditation1);
 rosary.add(meditation2);
 rosary.add(meditation3);
@@ -1023,6 +1091,7 @@ var mainMenu = new UI.Menu({
         { title: 'Confession', subtitle: 'Quick Guide', icon: confessionIMG },
         { title: 'Stations of', subtitle: 'the Cross', icon: stationsIMG },
         { title: 'Divine Mercy', subtitle: 'Chaplet', icon: heartIMG },
+        { title: 'The Pope\'s', subtitle: 'Monthly Intentions', icon: popeIMG },
         { title: 'About Orémus', subtitle: 'Pebble App', icon: infoIMG }]
     }]
   });
@@ -1037,7 +1106,8 @@ var mainMenu = new UI.Menu({
       case 2: confession.show(); break;
       case 3: stations.show(); break;
       case 4: chaplet.show(); break;
-      case 5: about.show(); mainMenu.hide(); break;
+      case 5: intentScreen.show(); break;
+      case 6: about.show(); mainMenu.hide(); break;
       default: 
         console.log('e.itemIndex is out of bounds: ' + e.itemIndex);
     } 
