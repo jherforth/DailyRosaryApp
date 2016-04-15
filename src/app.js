@@ -1,6 +1,6 @@
 // CATHORIST PEBBLE APP BY JASON HERFORTH
 // 2016
-// V1.2
+// V1.3
 
 //LET'S GET THIS PARTY STARTED
 var UI = require('ui');
@@ -286,108 +286,76 @@ splashScreen.show();
 
 //  ++ ROSARY SCREEN START ++ 
 //ROSARY COMPONENT BLANK VARIABLES
-var day1 ="";
-var day2 ="";
-var day3 ="";
-var day4 ="";
-var day5 ="";
+var mysteryDay ="";
 var mystery ="";
 var txtcolor = '';
 var titleBG = '';
 
 //MYSTERIES TEXT
-var glorious1 = "I. Resurrection of Jesus Christ";
-var glorious2 = "II. The Ascension of Jesus to Heaven";
-var glorious3 = "III. The Descent of the Holy Ghost";
-var glorious4 = "IV. The Assumption of Mary into Heaven";
-var glorious5 = "V. The Coronation of Mary";
+var glorious = ["I. Resurrection of Jesus Christ \n",
+                 "II. The Ascension of Jesus to Heaven \n",
+                 "III. The Descent of the Holy Ghost \n",
+                 "IV. The Assumption of Mary into Heaven \n",
+                 "V. The Coronation of Mary"];
 
-var luminous1 = "I. The Lord's Baptism in the Jordan";
-var luminous2 = "II. The Wedding Feast at Cana";
-var luminous3 = "III. The Proclamation of the Kingdom";
-var luminous4 = "IV. The Transfiguration on the mountain";
-var luminous5 = "V. The Institution of the Eucharist";
+var luminous = ["I. The Lord's Baptism in the Jordan \n",
+                "II. The Wedding Feast at Cana \n",
+                "III. The Proclamation of the Kingdom \n",
+                "IV. The Transfiguration on the mountain \n",
+                "V. The Institution of the Eucharist"];
 
-var sorrowful1 = "I. Agony of Jesus in the Garden";
-var sorrowful2 = "II. The Scourging at the Pillar";
-var sorrowful3 = "III. Jesus is Crowned with Thorns";
-var sorrowful4 = "IV. Jesus Carried the Cross";
-var sorrowful5 = "V. The Crucifixion of our Lord";
+var sorrowful = ["I. Agony of Jesus in the Garden\n",
+                 "II. The Scourging at the Pillar\n",
+                 "III. Jesus is Crowned with Thorns\n",
+                 "IV. Jesus Carried the Cross\n",
+                 "V. The Crucifixion of our Lord"];
 
-var joyful1 = "I. Annunciation of the Lord to Mary";
-var joyful2 = "II. Visitation of Mary to Elizabeth";
-var joyful3 = "III. Nativity of our Lord Jesus Christ";
-var joyful4 = "IV. Presentation of our Lord";
-var joyful5 = "V. Finding Jesus in the Temple";
+var joyful = ["I. Annunciation of the Lord to Mary \n",
+              "II. Visitation of Mary to Elizabeth \n",
+              "III. Nativity of our Lord Jesus Christ \n",
+              "IV. Presentation of our Lord \n",
+              "V. Finding Jesus in the Temple"];
 
 //SETS TEXT FOR THE DAY
 switch (new Date().getDay()) {
     case 0:
-        day1 = glorious1;
-        day2 = glorious2;
-        day3 = glorious3;
-        day4 = glorious4;
-        day5 = glorious5;
+        mysteryDay = glorious;
         txtcolor = '#FFFFFF';
         mystery = "GLORIOUS";
         titleBG = '#AA55AA';
         break;
     case 1:
-        day1 = joyful1;
-        day2 = joyful2;
-        day3 = joyful3;
-        day4 = joyful4;
-        day5 = joyful5;
+        mysteryDay = joyful;
         txtcolor = '#FFFFFF';
         mystery = "JOYFUL";
         titleBG = '#005500';
         break;
     case 2:
-        day1 = sorrowful1;
-        day2 = sorrowful2;
-        day3 = sorrowful3;
-        day4 = sorrowful4;
-        day5 = sorrowful5;
+        mysteryDay = sorrowful;
         txtcolor = '#FFFFFF';
         mystery = "SORROWFUL";
         titleBG = '#AA0000';
         break;
     case 3:
-        day1 = glorious1;
-        day2 = glorious2;
-        day3 = glorious3;
-        day4 = glorious4;
-        day5 = glorious5;
+        mysteryDay = glorious;
         txtcolor = '#FFFFFF';
         mystery = "GLORIOUS";
         titleBG = '#AA55AA';
         break;
     case 4:
-        day1 = luminous1;
-        day2 = luminous2;
-        day3 = luminous3;
-        day4 = luminous4;
-        day5 = luminous5;
+        mysteryDay = luminous;
         txtcolor = '#000000';
         mystery = "LUMINOUS";
         titleBG = '#55AAAA';
         break;
     case 5:
-        day1 = sorrowful1;
-        day2 = sorrowful2;
-        day3 = sorrowful3;
-        day4 = sorrowful4;
-        day5 = sorrowful5;
+        mysteryDay = sorrowful;
         txtcolor = '#FFFFFF';
         mystery = "SORROWFUL";
         titleBG = '#AA0000';
         break;
     case 6:
-        day1 = joyful1;
-        day2 = joyful2;
-        day3 = joyful3;
-        day4 = joyful4;
-        day5 = joyful5;
+        mysteryDay = joyful;
         txtcolor = '#FFFFFF';
         mystery = "JOYFUL";
         titleBG = '#005500';
@@ -397,7 +365,7 @@ switch (new Date().getDay()) {
 var rosary = new UI.Window({ 
   fullscreen: true,
   backgroundColor: 'white',
-  scrollable: false 
+  scrollable: true 
 });
 
 //DAILY ROSARY TITLE
@@ -417,79 +385,18 @@ var titeBackgound = new UI.Rect({
 });
 
 //SETS STYLE FOR EACH MYSTERY TEXT
-var meditation1 = new UI.Text({
-position: new Vector2(0, 0),
- size: new Vector2(144, 168),
- font: 'gothic-14',
- text: day1,
+var meditations = new UI.Text({
+position: new Vector2(0, 22),
+ size: new Vector2(144, 250),
+ font: 'gothic-18',
+ text: mysteryDay.join(""),
  textAlign: 'center',
  color: 'black'
 });
-
-var meditation2 = new UI.Text({
-position: new Vector2(0, 0),
- size: new Vector2(144, 168),
- font: 'gothic-14',
- text: day2,
- textAlign: 'center',
- color: 'black'
-});
-
-var meditation3 = new UI.Text({
-position: new Vector2(0, 0),
- size: new Vector2(144, 168),
- font: 'gothic-14',
- text: day3,
- textAlign: 'center',
- color: 'black'
-});
-
-var meditation4 = new UI.Text({
-position: new Vector2(0, 0),
- size: new Vector2(144, 168),
- font: 'gothic-14',
- text: day4,
- textAlign: 'center',
- color: 'black'
-});
-
-var meditation5 = new UI.Text({
-position: new Vector2(0, 0),
- size: new Vector2(144, 168),
- font: 'gothic-14',
- text: day5,
- textAlign: 'center',
- color: 'black'
-});
-
-//POSITIONS EACH MYSTERY TEXT
-var pos1 = meditation1.position();
-  pos1.y += 22;
-  meditation1.position(pos1);
-
-var pos2 = meditation2.position();
-  pos2.y += 50;
-  meditation2.position(pos2);
-
-var pos3 = meditation3.position();
-  pos3.y += 78;
-  meditation3.position(pos3);
-
-var pos4 = meditation4.position();
-  pos4.y += 106;
-  meditation4.position(pos4);
-
-var pos5 = meditation5.position();
-  pos5.y += 134;
-  meditation5.position(pos5);
 
 rosary.add(titeBackgound);
 rosary.add(dailyRosary);
-rosary.add(meditation1);
-rosary.add(meditation2);
-rosary.add(meditation3);
-rosary.add(meditation4);
-rosary.add(meditation5);
+rosary.add(meditations);
 
 //  ++ PRAYERS SCREEN START ++
 var prayers = new UI.Window({ 
