@@ -307,7 +307,7 @@ var luminous = ["I. The Lord's Baptism in the Jordan \n",
 var sorrowful = ["I. Agony of Jesus in the Garden\n",
                  "II. The Scourging at the Pillar\n",
                  "III. Jesus is Crowned with Thorns\n",
-                 "IV. Jesus Carried the Cross\n",
+                 "IV. Jesus Carries the Cross\n",
                  "V. The Crucifixion of our Lord"];
 
 var joyful = ["I. Annunciation of the Lord to Mary \n",
@@ -399,9 +399,24 @@ rosary.add(dailyRosary);
 rosary.add(meditations);
 
 //  ++ PRAYERS SCREEN START ++
+
+// 0,1,2 = Our Father | 3,4 = Hail Mary | 5,6 = Glory Be | 7,8,9,10 = Apostles' Creed
+var allPrayers = ["Our Father\n\n",
+                  "Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who ",
+                  "trespass against us and lead us not into temptation, but deliver us from evil. Amen. \n\n",
+                  "Hail Mary\n\n",
+                  "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen.\n\n",
+                  "Glory Be\n\n",
+                  "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.\n\n",
+                  "Apostles' Creed\n\n",
+                  "I believe in God, the Father almighty, creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was ",
+                  "crucified, died, and was buried. He descended into hell; the third day he rose again from the dead; he ascended into heaven and is seated at the right hand of the Father; from thence he shall come to judge the",
+                  "living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen."
+                 ];
+
 var prayers = new UI.Window({ 
   fullscreen: true, 
-  backgroundColor: 'white', 
+  backgroundColor: '#FFFFFF', 
   scrollable: true
   });
 
@@ -412,7 +427,7 @@ var prayersTitle = new UI.Text({
  font: 'gothic-24-bold',
  text: "Common Prayers",
  textAlign: 'center',
- color: 'white'
+ color: '#FFFFFF'
 });
 
 var titeHeaderBG = new UI.Rect({
@@ -421,131 +436,38 @@ var titeHeaderBG = new UI.Rect({
   backgroundColor: '#0000AA'
 });
 
-//OUR FATHER
-var ourFatherTitle = new UI.Text({
- position: new Vector2(0, 35),
- size: new Vector2(144, 168),
- font: 'gothic-18-bold',
- text: "Our Father",
+var printPrayers = new UI.Text({
+ position: new Vector2(0, 40),
+ size: new Vector2(144, 1200),
+ font: 'gothic-14',
+ text: allPrayers.join(""),
  textAlign: 'center',
- color: 'black'
-});
-
-var ourFather1 = new UI.Text({
- position: new Vector2(0, 60),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who",
- textAlign: 'center',
- color: 'black'
-});
-
-var ourFather2 = new UI.Text({
- position: new Vector2(0, 240),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "trespass against us and lead us not into temptation, but deliver us from evil. Amen.",
- textAlign: 'center',
- color: 'black'
-});
-
-//HAIL MARY
-var hailMaryTitle = new UI.Text({
- position: new Vector2(0, 320),
- size: new Vector2(144, 168),
- font: 'gothic-18-bold',
- text: "Hail Mary",
- textAlign: 'center',
- color: 'black'
-});
-
-var hailMary = new UI.Text({
- position: new Vector2(0, 345),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen.",
- textAlign: 'center',
- color: 'black'
-});
-
-//GLORY BE
-var gloryBeTitle = new UI.Text({
- position: new Vector2(0, 515),
- size: new Vector2(144, 168),
- font: 'gothic-18-bold',
- text: "Glory Be",
- textAlign: 'center',
- color: 'black'
-});
-
-var gloryBe = new UI.Text({
- position: new Vector2(0, 540),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.",
- textAlign: 'center',
- color: 'black'
-});
-
-//APOSTLES CREED
-var apostlesCreedTitle = new UI.Text({
- position: new Vector2(0, 660),
- size: new Vector2(144, 168),
- font: 'gothic-18-bold',
- text: "Apostles' Creed",
- textAlign: 'center',
- color: 'black'
-});
-
-var apostlesCreed1 = new UI.Text({
- position: new Vector2(0, 685),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "I believe in God, the Father almighty, creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was",
- textAlign: 'center',
- color: 'black'
-});
-
-var apostlesCreed2 = new UI.Text({
- position: new Vector2(0, 845),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "crucified, died, and was buried. He descended into hell; the third day he rose again from the dead; he ascended into heaven and is seated at the right hand of the Father; from thence he shall come to judge the",
- textAlign: 'center',
- color: 'black'
-});
-
-var apostlesCreed3 = new UI.Text({
- position: new Vector2(0, 1005),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen.",
- textAlign: 'center',
- color: 'black'
+ color: '#000000'
 });
 
 prayers.add(titeHeaderBG);
 prayers.add(prayersTitle);
-prayers.add(ourFatherTitle);
-prayers.add(ourFather1);
-prayers.add(ourFather2);
-prayers.add(hailMaryTitle);
-prayers.add(hailMary);
-prayers.add(gloryBeTitle);
-prayers.add(gloryBe);
-prayers.add(apostlesCreedTitle);
-prayers.add(apostlesCreed1);
-prayers.add(apostlesCreed2);
-prayers.add(apostlesCreed3);
+prayers.add(printPrayers);
 
 //  ++ CONFESSION SCREEN START ++
+
+//CONFESSION STEPS
+var confessionSteps = ["Steps When Going to Confession\n\n",
+                  "1) Sign of the Cross - (Optional Scripture Reading)\n",
+                  "2) \"Bless me Father for I have sinned. My last confession was [X] days ago and I want to tell God that I am sorry for the things that I have done and ask God to forgive me. My sins are:\"\n",
+                  "3) List your sins since your last confession.\n",
+                  "4) Listen carefully for your penance from the priest.\n",
+                  "5) Recite the Act of Contrition:\n\n",
+                  "O MY GOD,  I am heartily sorry for having offended Thee, and I detest all my sins because I dread the loss of Heaven and the pains of Hell; but most of all because they offend Thee, my God, Who art all ",
+                  "good and deserving of all my love. I firmly resolve, with the help of Thy grace, to confess my sins, to do penance, and to amend my life. Amen.",
+                  ];
+
 var confession = new UI.Window({ 
   fullscreen: true, 
   backgroundColor: "black", 
   scrollable: true 
 });
 
-//CONFESSION HOW TO
 var confessionTitle = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
@@ -555,110 +477,48 @@ var confessionTitle = new UI.Text({
  color: 'white'
 });
 
-//CONFESSION STEPS
-var confession1 = new UI.Text({
+var printConfession = new UI.Text({
  position: new Vector2(0, 30),
- size: new Vector2(144, 168),
- font: 'gothic-18-bold',
- text: "Steps When Going to Confession",
- textAlign: 'center',
- color: 'white'
-});
-
-var confession2 = new UI.Text({
- position: new Vector2(0, 70),
- size: new Vector2(144, 168),
+ size: new Vector2(144, 1200),
  font: 'gothic-18',
- text: "1) Sign of the Cross - (Optional Scripture Reading)",
+ text: confessionSteps.join(""),
  textAlign: 'center',
  color: 'white'
-});
-
-var confession3 = new UI.Text({
- position: new Vector2(0, 130),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "2) \"Bless me Father for I have sinned. My last confession was [X] days ago and I want to tell God that I am sorry for the things that I have done and ask God to forgive me. My sins are:\"",
- textAlign: 'center',
- color: 'white'
-});
-
-var confession4 = new UI.Text({
- position: new Vector2(0, 240),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "3) List your sins since your last confession.",
- textAlign: 'center',
- color: 'white'
-});
-
-var confession4 = new UI.Text({
- position: new Vector2(0, 280),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "4) Listen carefully for your penance from the priest.",
- textAlign: 'center',
- color: 'white'
-});
-
-var confession5 = new UI.Text({
- position: new Vector2(0, 340),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "5) Recite the Act of Contrition.",
- textAlign: 'center',
- color: 'white'
-});
-
-var confession6 = new UI.Text({
- position: new Vector2(0, 385),
- size: new Vector2(144, 168),
- font: 'gothic-18-bold',
- text: "Act of Contrition.",
- textAlign: 'center',
- color: 'white'
-});
-
-var confession7 = new UI.Text({
- position: new Vector2(0, 410),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "O MY GOD,  I am heartily sorry for having offended Thee, and I detest all my sins because I dread the loss of Heaven and the pains of Hell; but most of all because they offend Thee, my God, Who art all",
- textAlign: 'center',
- color: 'white'
-});
-
-var confession8 = new UI.Text({
-  position: new Vector2(0, 555),
-  size: new Vector2(144, 168),
-  font: 'gothic-18',
-  text: "good and deserving of all my love. I firmly resolve, with the help of Thy grace, to confess my sins, to do penance, and to amend my life. Amen.",
-  textAlign: 'center',
-  color: 'white'
 });
 
 confession.add(confessionTitle);
-confession.add(confession1);
-confession.add(confession2);
-confession.add(confession3);
-confession.add(confession4);
-confession.add(confession5);
-confession.add(confession6);
-confession.add(confession7);
-confession.add(confession8);
+confession.add(printConfession);
 
 //  ++ STATIONS SCREEN START++
+
+var allStations = ["Begin with the Sign of the Cross and by reciting the Act of Contrition \n\n",
+                "The First Station - Jesus is condemned to death. (Mark 15:1-15) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "The Second Station - Jesus carries His cross. (John 19:13-17) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "The Third Station - Jesus falls for the first time. (Isaiah 53:4-7) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "The Fourth Station - Jesus meets his Mother. (Luke 2:25-40) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "The Fifth Station - Simon of Cyrene helps Jesus. (Mark 15:21) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "The Sixth Station - Veronica wipes the face of Jesus. (Matthew 25:40) + Our Father + Hail Mary + Glory Be to the Father + \n\n",                  
+                "The Seventh Station - Jesus falls the second time. (Psalm 38:6-22) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "The Eighth Station - Jesus consoles the women of Jerusalem. (Luke 23:27-31) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "The Ninth Station - Jesus falls the third time. (Psalm 37:23-24) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "The Tenth Station - Jesus is stripped of his garments. (John 19:23-24) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "The Eleventh Station - Jesus is nailed to the Cross. (Luke 23:33-43) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "The Twelfth Station - Jesus dies on the Cross. (John 19:28-37) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "The Thirteenth Station - Jesus is taken down from the Cross. (John 19:38-40) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "The Fourteenth Station - Jesus is laid in the Tomb. (Matthew 27:57-61) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
+                "This was the traditional Stations of the Cross, there is an alternative offered by Saint Pope John Paul II."
+                ];
+
 var stations = new UI.Window({ 
   fullscreen: true, 
-  backgroundColor: 'white', 
+  backgroundColor: '#FFFFFF', 
   scrollable: true
   });
 
-// PRAYERS TITLE
 var stationsTitle = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-24-bold',
+ font: 'gothic-18-bold',
  text: "Stations of the Cross",
  textAlign: 'center',
  color: 'white'
@@ -666,173 +526,36 @@ var stationsTitle = new UI.Text({
 
 var stationsHeaderBG = new UI.Rect({
   position: new Vector2(0, 0),
-  size: new Vector2(144, 58),
+  size: new Vector2(144, 25),
   backgroundColor: '#AA0000'
 });
 
-//OUR FATHER
-var stationsOpening = new UI.Text({
- position: new Vector2(0, 65),
- size: new Vector2(144, 168),
+var printStations = new UI.Text({
+ position: new Vector2(0, 30),
+ size: new Vector2(144, 1695),
  font: 'gothic-18',
- text: "Begin with the Sign of the Cross and by reciting the Act of Contrition",
+ text: allStations.join(""),
  textAlign: 'center',
  color: 'black'
 });
 
-var station1 = new UI.Text({
- position: new Vector2(0, 130),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The First Station - Jesus is condemned to death. (Mark 15:1-15) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station2 = new UI.Text({
- position: new Vector2(0, 240),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Second Station - Jesus carries His cross. (John 19:13-17) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station3 = new UI.Text({
- position: new Vector2(0, 350),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Third Station - Jesus falls for the first time. (Isaiah 53:4-7) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station4 = new UI.Text({
- position: new Vector2(0, 460),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Fourth Station - Jesus meets his Mother. (Luke 2:25-40) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station5 = new UI.Text({
- position: new Vector2(0, 565),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Fifth Station - Simon of Cyrene helps Jesus. (Mark 15:21) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station6 = new UI.Text({
- position: new Vector2(0, 670),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Sixth Station - Veronica wipes the face of Jesus. (Matthew 25:40) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station7 = new UI.Text({
- position: new Vector2(0, 793),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Seventh Station - Jesus falls the second time. (Psalm 38:6-22) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station8 = new UI.Text({
- position: new Vector2(0, 903),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Eighth Station - Jesus consoles the women of Jerusalem. (Luke 23:27-31) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station9 = new UI.Text({
- position: new Vector2(0, 1025),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Ninth Station - Jesus falls the third time. (Psalm 37:23-24) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station10 = new UI.Text({
- position: new Vector2(0, 1130),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Tenth Station - Jesus is stripped of his garments. (John 19:23-24) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station11 = new UI.Text({
- position: new Vector2(0, 1252),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Eleventh Station - Jesus is nailed to the Cross. (Luke 23:33-43) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station12 = new UI.Text({
- position: new Vector2(0, 1350),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Twelfth Station - Jesus dies on the Cross. (John 19:28-37) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station13 = new UI.Text({
- position: new Vector2(0, 1458),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Thirteenth Station - Jesus is taken down from the Cross. (John 19:38-40) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var station14 = new UI.Text({
- position: new Vector2(0, 1575),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The Fourteenth Station - Jesus is laid in the Tomb. (Matthew 27:57-61) + Our Father + Hail Mary + Glory Be to the Father +",
- textAlign: 'center',
- color: 'black'
-});
-
-var stationEnd = new UI.Text({
- position: new Vector2(0, 1695),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "This was the traditional Stations of the Cross, there is an alternative offered by Saint Pope John Paul II.",
- textAlign: 'center',
- color: 'black'
-});
-
+stations.add(printStations);
 stations.add(stationsHeaderBG);
 stations.add(stationsTitle);
-stations.add(stationsOpening);
-stations.add(station1);
-stations.add(station2);
-stations.add(station3);
-stations.add(station4);
-stations.add(station5);
-stations.add(station6);
-stations.add(station7);
-stations.add(station8);
-stations.add(station9);
-stations.add(station10);
-stations.add(station11);
-stations.add(station12);
-stations.add(station13);
-stations.add(station14);
-stations.add(stationEnd);
+
+//  ++ CHAPLET SCREEN START++
+var chapletPrayers = ["Using a Rosary starting with the Crucifix: Make the sign of the cross.\n\n",
+                      "First Large Bead:\n",
+                      "You expired, Jesus, but the source of life gushed forth for souls, and the ocean of mercy opened up for the whole world. O Fount of Life, unfathomable Divine Mercy, envelop the whole world and empty Yourself out upon us. \n\n",
+                      "Next Three Small Beads: + Our Father + Hail Mary + Apostles' Creed + \n\n",
+                      "The second large bead and all after, pray The Eternal Father prayer:\n",
+                      "Eternal Father, I offer you the Body and Blood, Soul and Divinity of Your Dearly Beloved Son, Our Lord, Jesus Christ, in atonement for our sins and those of the whole world.\n\n",
+                      "On the 10 small decade beads pray: For the sake of His sorrowful Passion, have mercy on us and on the whole world.\n\n",
+                      "Conclude at the medalion by praying: (x3) Holy God, Holy Mighty One, Holy Immortal One, have mercy on us and on the whole world.\n\n",
+                      "Concluding Prayer (optional):\n",
+                      "Eternal God, in whom mercy is endless and the treasury of compassion, inexhaustible, look kindly upon us and increase Your mercy in us,",
+                      "that in difficult moments we might not despair nor become despondent, but with great confidence submit ourselves to Your holy will, which is Love and Mercy itself."
+                     ];
 
 //  ++ CHAPLET SCREEN START++
 var chaplet = new UI.Window({ 
@@ -841,11 +564,10 @@ var chaplet = new UI.Window({
   scrollable: true
   });
 
-// PRAYERS TITLE
 var chapletTitle = new UI.Text({
  position: new Vector2(0, 0),
  size: new Vector2(144, 168),
- font: 'gothic-24-bold',
+ font: 'gothic-18-bold',
  text: "Chaplet of Divine Mercy",
  textAlign: 'center',
  color: 'white'
@@ -853,123 +575,22 @@ var chapletTitle = new UI.Text({
 
 var chapletHeaderBG = new UI.Rect({
   position: new Vector2(0, 0),
-  size: new Vector2(144, 58),
+  size: new Vector2(144, 45),
   backgroundColor: '#550055'
 });
 
-//OUR FATHER
-var chapletOpening = new UI.Text({
- position: new Vector2(0, 65),
- size: new Vector2(144, 168),
+var printChaplet = new UI.Text({
+ position: new Vector2(0, 50),
+ size: new Vector2(144, 1680),
  font: 'gothic-18',
-  text: "Using a Rosary starting with the Crucifix: Make the sign of the cross.",
- textAlign: 'center',
- color: 'black'
-});
-
-var chaplet1 = new UI.Text({
- position: new Vector2(0, 130),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "First Large Bead:",
- textAlign: 'center',
- color: 'black'
-});
-
-var chaplet2 = new UI.Text({
- position: new Vector2(0, 150),
- size: new Vector2(144, 168),
- font: 'gothic-18',
-  text: "You expired, Jesus, but the source of life gushed forth for souls, and the ocean of mercy opened up for the whole world. O Fount of Life, unfathomable Divine Mercy, envelop the whole world and empty Yourself out upon us. ",
- textAlign: 'center',
- color: 'black'
-});
-
-var chaplet3 = new UI.Text({
- position: new Vector2(0, 341),
- size: new Vector2(144, 168),
- font: 'gothic-18',
-  text: "Next Three Small Beads: + Our Father + Hail Mary + Apostles' Creed +",
- textAlign: 'center',
- color: 'black'
-});
-
-var chaplet4 = new UI.Text({
- position: new Vector2(0, 410),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "The second large bead and all after, pray The Eternal Father prayer:",
- textAlign: 'center',
- color: 'black'
-});
-
-var chaplet5 = new UI.Text({
- position: new Vector2(0, 465),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "Eternal Father, I offer you the Body and Blood, Soul and Divinity of Your Dearly Beloved Son, Our Lord, Jesus Christ, in atonement for our sins and those of the whole world.",
- textAlign: 'center',
- color: 'black'
-});
-
-var chaplet6 = new UI.Text({
- position: new Vector2(0, 618),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "On the 10 small decade beads pray: For the sake of His sorrowful Passion, have mercy on us and on the whole world.",
- textAlign: 'center',
- color: 'black'
-});
-
-var chaplet7 = new UI.Text({
- position: new Vector2(0, 723),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "Conclude at the medalion by praying: (x3) Holy God, Holy Mighty One, Holy Immortal One, have mercy on us and on the whole world.",
- textAlign: 'center',
- color: 'black'
-});
-
-var chaplet8 = new UI.Text({
- position: new Vector2(0, 860),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "Concluding Prayer (optional):",
- textAlign: 'center',
- color: 'black'
-});
-
-var chaplet9 = new UI.Text({
- position: new Vector2(0, 912),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "Eternal God, in whom mercy is endless and the treasury of compassion, inexhaustible, look kindly upon us and increase Your mercy in us,",
- textAlign: 'center',
- color: 'black'
-});
-
-var chapletEnd = new UI.Text({
- position: new Vector2(0, 1022),
- size: new Vector2(144, 168),
- font: 'gothic-18',
- text: "that in difficult moments we might not despair nor become despondent, but with great confidence submit ourselves to Your holy will, which is Love and Mercy itself.",
+ text: chapletPrayers.join(""),
  textAlign: 'center',
  color: 'black'
 });
 
 chaplet.add(chapletHeaderBG);
 chaplet.add(chapletTitle);
-chaplet.add(chapletOpening);
-chaplet.add(chaplet1);
-chaplet.add(chaplet2);
-chaplet.add(chaplet3);
-chaplet.add(chaplet4);
-chaplet.add(chaplet5);
-chaplet.add(chaplet6);
-chaplet.add(chaplet7);
-chaplet.add(chaplet8);
-chaplet.add(chaplet9);
-chaplet.add(chapletEnd);
+chaplet.add(printChaplet);
 
 //  ++  ABOUT SCREEN START ++
 var about = new UI.Card({
