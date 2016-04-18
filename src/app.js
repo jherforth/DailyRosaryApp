@@ -401,18 +401,23 @@ rosary.add(meditations);
 //  ++ PRAYERS SCREEN START ++
 
 // 0,1,2 = Our Father | 3,4 = Hail Mary | 5,6 = Glory Be | 7,8,9,10 = Apostles' Creed
-var allPrayers = ["Our Father\n\n",
-                  "Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who ",
-                  "trespass against us and lead us not into temptation, but deliver us from evil. Amen. \n\n",
-                  "Hail Mary\n\n",
-                  "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen.\n\n",
-                  "Glory Be\n\n",
-                  "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.\n\n",
-                  "Apostles' Creed\n\n",
-                  "I believe in God, the Father almighty, creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was ",
-                  "crucified, died, and was buried. He descended into hell; the third day he rose again from the dead; he ascended into heaven and is seated at the right hand of the Father; from thence he shall come to judge the",
-                  "living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen."
-                 ];
+var allPrayers = {
+  paterNoster: ["Our Father\n",
+                "Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who ",
+                "trespass against us and lead us not into temptation, but deliver us from evil. Amen. \n"
+               ],
+  aveMaria: ["Hail Mary\n",
+             "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen.\n"
+            ],
+  gloriaPatri: ["Glory Be\n",
+               "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.\n"
+               ],
+  credo: ["Apostles' Creed\n",
+          "I believe in God, the Father almighty, creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was ",
+          "crucified, died, and was buried. He descended into hell; the third day he rose again from the dead; he ascended into heaven and is seated at the right hand of the Father; from thence he shall come to judge the",
+          "living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen."
+         ]
+};
 
 var prayers = new UI.Window({ 
   fullscreen: true, 
@@ -439,8 +444,8 @@ var titeHeaderBG = new UI.Rect({
 var printPrayers = new UI.Text({
  position: new Vector2(0, 40),
  size: new Vector2(144, 1200),
- font: 'gothic-14',
- text: allPrayers.join(""),
+ font: 'gothic-18',
+ text: allPrayers.paterNoster.join("") + "\n" + allPrayers.aveMaria.join("") + "\n" + allPrayers.gloriaPatri.join(""),
  textAlign: 'center',
  color: '#000000'
 });
@@ -469,21 +474,21 @@ var confession = new UI.Window({
 });
 
 var confessionTitle = new UI.Text({
- position: new Vector2(0, 0),
- size: new Vector2(144, 168),
- font: 'gothic-24-bold',
- text: "Confession Guide",
- textAlign: 'center',
- color: 'white'
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 168),
+  font: 'gothic-24-bold',
+  text: "Confession Guide",
+  textAlign: 'center',
+  color: 'white'
 });
 
 var printConfession = new UI.Text({
- position: new Vector2(0, 30),
- size: new Vector2(144, 1200),
- font: 'gothic-18',
- text: confessionSteps.join(""),
- textAlign: 'center',
- color: 'white'
+  position: new Vector2(0, 30),
+  size: new Vector2(144, 1200),
+  font: 'gothic-18',
+  text: confessionSteps.join(""),
+  textAlign: 'center',
+  color: 'white'
 });
 
 confession.add(confessionTitle);
@@ -491,23 +496,24 @@ confession.add(printConfession);
 
 //  ++ STATIONS SCREEN START++
 
-var allStations = ["Begin with the Sign of the Cross and by reciting the Act of Contrition \n\n",
-                "The First Station - Jesus is condemned to death. (Mark 15:1-15) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "The Second Station - Jesus carries His cross. (John 19:13-17) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "The Third Station - Jesus falls for the first time. (Isaiah 53:4-7) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "The Fourth Station - Jesus meets his Mother. (Luke 2:25-40) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "The Fifth Station - Simon of Cyrene helps Jesus. (Mark 15:21) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "The Sixth Station - Veronica wipes the face of Jesus. (Matthew 25:40) + Our Father + Hail Mary + Glory Be to the Father + \n\n",                  
-                "The Seventh Station - Jesus falls the second time. (Psalm 38:6-22) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "The Eighth Station - Jesus consoles the women of Jerusalem. (Luke 23:27-31) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "The Ninth Station - Jesus falls the third time. (Psalm 37:23-24) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "The Tenth Station - Jesus is stripped of his garments. (John 19:23-24) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "The Eleventh Station - Jesus is nailed to the Cross. (Luke 23:33-43) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "The Twelfth Station - Jesus dies on the Cross. (John 19:28-37) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "The Thirteenth Station - Jesus is taken down from the Cross. (John 19:38-40) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "The Fourteenth Station - Jesus is laid in the Tomb. (Matthew 27:57-61) + Our Father + Hail Mary + Glory Be to the Father + \n\n",
-                "This was the traditional Stations of the Cross, there is an alternative offered by Saint Pope John Paul II."
-                ];
+var allStations = {    
+  _0: "Begin with the Sign of the Cross and by reciting the Act of Contrition",
+  _1:"The First Station - Jesus is condemned to death. (Mark 15:1-15) + Our Father + Hail Mary + Glory Be to the Father +",
+  _2:"The Second Station - Jesus carries His cross. (John 19:13-17) + Our Father + Hail Mary + Glory Be to the Father +",
+  _3:"The Third Station - Jesus falls for the first time. (Isaiah 53:4-7) + Our Father + Hail Mary + Glory Be to the Father +",
+  _4:"The Fourth Station - Jesus meets his Mother. (Luke 2:25-40) + Our Father + Hail Mary + Glory Be to the Father +",
+  _5:"The Fifth Station - Simon of Cyrene helps Jesus. (Mark 15:21) + Our Father + Hail Mary + Glory Be to the Father +",
+  _6:"The Sixth Station - Veronica wipes the face of Jesus. (Matthew 25:40) + Our Father + Hail Mary + Glory Be to the Father +",                  
+  _7:"The Seventh Station - Jesus falls the second time. (Psalm 38:6-22) + Our Father + Hail Mary + Glory Be to the Father +",
+  _8:"The Eighth Station - Jesus consoles the women of Jerusalem. (Luke 23:27-31) + Our Father + Hail Mary + Glory Be to the Father +",
+  _9:"The Ninth Station - Jesus falls the third time. (Psalm 37:23-24) + Our Father + Hail Mary + Glory Be to the Father +",
+  _10:"The Tenth Station - Jesus is stripped of his garments. (John 19:23-24) + Our Father + Hail Mary + Glory Be to the Father +",
+  _11:"The Eleventh Station - Jesus is nailed to the Cross. (Luke 23:33-43) + Our Father + Hail Mary + Glory Be to the Father +",
+  _12:"The Twelfth Station - Jesus dies on the Cross. (John 19:28-37) + Our Father + Hail Mary + Glory Be to the Father +",
+  _13:"The Thirteenth Station - Jesus is taken down from the Cross. (John 19:38-40) + Our Father + Hail Mary + Glory Be to the Father +",
+  _14:"The Fourteenth Station - Jesus is laid in the Tomb. (Matthew 27:57-61) + Our Father + Hail Mary + Glory Be to the Father +",
+  _15:"This was the traditional Stations of the Cross, there is an alternative offered by Saint Pope John Paul II."
+  };
 
 var stations = new UI.Window({ 
   fullscreen: true, 
@@ -516,12 +522,12 @@ var stations = new UI.Window({
   });
 
 var stationsTitle = new UI.Text({
- position: new Vector2(0, 0),
- size: new Vector2(144, 168),
- font: 'gothic-18-bold',
- text: "Stations of the Cross",
- textAlign: 'center',
- color: 'white'
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 168),
+  font: 'gothic-18-bold',
+  text: "Stations of the Cross",
+  textAlign: 'center',
+  color: 'white'
 });
 
 var stationsHeaderBG = new UI.Rect({
@@ -531,12 +537,12 @@ var stationsHeaderBG = new UI.Rect({
 });
 
 var printStations = new UI.Text({
- position: new Vector2(0, 30),
- size: new Vector2(144, 1695),
- font: 'gothic-18',
- text: allStations.join(""),
- textAlign: 'center',
- color: 'black'
+  position: new Vector2(0, 30),
+  size: new Vector2(144, 1695),
+  font: 'gothic-18',
+  text: allStations.join(""),
+  textAlign: 'center',
+  color: 'black'
 });
 
 stations.add(printStations);
