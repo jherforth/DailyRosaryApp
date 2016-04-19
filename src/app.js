@@ -399,60 +399,195 @@ rosary.add(dailyRosary);
 rosary.add(meditations);
 
 //  ++ PRAYERS SCREEN START ++
-
-// 0,1,2 = Our Father | 3,4 = Hail Mary | 5,6 = Glory Be | 7,8,9,10 = Apostles' Creed
 var allPrayers = {
-  paterNoster: ["Our Father\n",
-                "Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who ",
-                "trespass against us and lead us not into temptation, but deliver us from evil. Amen. \n"
-               ],
-  aveMaria: ["Hail Mary\n",
-             "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen.\n"
-            ],
-  gloriaPatri: ["Glory Be\n",
-               "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen.\n"
-               ],
-  credo: ["Apostles' Creed\n",
-          "I believe in God, the Father almighty, creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was ",
-          "crucified, died, and was buried. He descended into hell; the third day he rose again from the dead; he ascended into heaven and is seated at the right hand of the Father; from thence he shall come to judge the",
-          "living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen."
-         ]
+  "prayer": [
+    {
+     "title": "Our Father",
+     "prayer": ["Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who ",
+                "trespass against us and lead us not into temptation, but deliver us from evil. Amen."
+               ]
+    },
+    {  
+     "title": "Hail Mary",
+     "prayer": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen."
+    },
+    {
+     "title": "Glory Be",
+     "prayer": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+    },
+    {
+     "title": "Apostles' Creed",
+     "prayer": ["I believe in God, the Father almighty, creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was ",
+                "crucified, died, and was buried. He descended into hell; the third day he rose again from the dead; he ascended into heaven and is seated at the right hand of the Father; from thence he shall come to judge the",
+                "living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen."]
+    }
+  ]
 };
 
-var prayers = new UI.Window({ 
+var prayer0 = new UI.Window({ 
   fullscreen: true, 
   backgroundColor: '#FFFFFF', 
   scrollable: true
   });
 
 // PRAYERS TITLE
-var prayersTitle = new UI.Text({
- position: new Vector2(0, 0),
- size: new Vector2(144, 168),
- font: 'gothic-24-bold',
- text: "Common Prayers",
- textAlign: 'center',
- color: '#FFFFFF'
+var prayersTitle0 = new UI.Text({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 168),
+  font: 'gothic-24-bold',
+  text: allPrayers.prayer[0].title,
+  textAlign: 'center',
+  color: '#FFFFFF'
 });
 
-var titeHeaderBG = new UI.Rect({
+var titeHeaderBG0 = new UI.Rect({
   position: new Vector2(0, 0),
   size: new Vector2(144, 35),
   backgroundColor: '#0000AA'
 });
 
-var printPrayers = new UI.Text({
+var printPrayers0 = new UI.Text({
  position: new Vector2(0, 40),
  size: new Vector2(144, 1200),
  font: 'gothic-18',
- text: allPrayers.paterNoster.join("") + "\n" + allPrayers.aveMaria.join("") + "\n" + allPrayers.gloriaPatri.join(""),
+ text: allPrayers.prayer[0].prayer.join(""),
  textAlign: 'center',
  color: '#000000'
 });
 
-prayers.add(titeHeaderBG);
-prayers.add(prayersTitle);
-prayers.add(printPrayers);
+prayer0.add(titeHeaderBG0);
+prayer0.add(prayersTitle0);
+prayer0.add(printPrayers0);
+
+var prayer1 = new UI.Window({ 
+  fullscreen: true, 
+  backgroundColor: '#FFFFFF', 
+  scrollable: true
+  });
+
+// PRAYERS TITLE
+var prayersTitle1 = new UI.Text({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 168),
+  font: 'gothic-24-bold',
+  text: allPrayers.prayer[1].title,
+  textAlign: 'center',
+  color: '#FFFFFF'
+});
+
+var titeHeaderBG1 = new UI.Rect({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 35),
+  backgroundColor: '#0000AA'
+});
+
+var printPrayers1 = new UI.Text({
+ position: new Vector2(0, 40),
+ size: new Vector2(144, 1200),
+ font: 'gothic-18',
+ text: allPrayers.prayer[1].prayer,
+ textAlign: 'center',
+ color: '#000000'
+});
+
+prayer1.add(titeHeaderBG1);
+prayer1.add(prayersTitle1);
+prayer1.add(printPrayers1);
+
+var prayer2 = new UI.Window({ 
+  fullscreen: true, 
+  backgroundColor: '#FFFFFF', 
+  scrollable: true
+  });
+
+// PRAYERS TITLE
+var prayersTitle2 = new UI.Text({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 168),
+  font: 'gothic-24-bold',
+  text: allPrayers.prayer[2].title,
+  textAlign: 'center',
+  color: '#FFFFFF'
+});
+
+var titeHeaderBG2 = new UI.Rect({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 35),
+  backgroundColor: '#0000AA'
+});
+
+var printPrayers2 = new UI.Text({
+ position: new Vector2(0, 40),
+ size: new Vector2(144, 1200),
+ font: 'gothic-18',
+ text: allPrayers.prayer[2].prayer,
+ textAlign: 'center',
+ color: '#000000'
+});
+
+prayer2.add(titeHeaderBG2);
+prayer2.add(prayersTitle2);
+prayer2.add(printPrayers2);
+
+var prayer3 = new UI.Window({ 
+  fullscreen: true, 
+  backgroundColor: '#FFFFFF', 
+  scrollable: true
+  });
+
+// PRAYERS TITLE
+var prayersTitle3 = new UI.Text({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 168),
+  font: 'gothic-24-bold',
+  text: allPrayers.prayer[3].title,
+  textAlign: 'center',
+  color: '#FFFFFF'
+});
+
+var titeHeaderBG3 = new UI.Rect({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 35),
+  backgroundColor: '#0000AA'
+});
+
+var printPrayers3 = new UI.Text({
+ position: new Vector2(0, 40),
+ size: new Vector2(144, 1200),
+ font: 'gothic-18',
+ text: allPrayers.prayer[3].prayer.join(""),
+ textAlign: 'center',
+ color: '#000000'
+});
+
+prayer3.add(titeHeaderBG3);
+prayer3.add(prayersTitle3);
+prayer3.add(printPrayers3);
+
+var prayerMenu = new UI.Menu({
+  backgroundColor: '#0055AA',
+  textColor: 'white',
+  highlightBackgroundColor: '#000000',
+  highlightTextColor: 'white',
+  sections: [{
+    items: [
+      { title: 'Our Father' }, 
+      { title: 'Hail Mary' },
+      { title: 'Glory Be' },
+      { title: 'Apostle\'s Creed' }]
+    }]
+  });
+
+  prayerMenu.on('select', function(e){
+    switch(e.itemIndex) {
+      case 0: prayer0.show(); break;
+      case 1: prayer1.show(); break;
+      case 2: prayer2.show(); break;
+      case 3: prayer3.show(); break;
+      default: 
+        console.log('e.itemIndex is out of bounds: ' + e.itemIndex);
+    } 
+  });
 
 //  ++ CONFESSION SCREEN START ++
 
@@ -497,22 +632,22 @@ confession.add(printConfession);
 //  ++ STATIONS SCREEN START++
 
 var allStations = {    
-  _0: "Begin with the Sign of the Cross and by reciting the Act of Contrition",
-  _1:"The First Station - Jesus is condemned to death. (Mark 15:1-15) + Our Father + Hail Mary + Glory Be to the Father +",
-  _2:"The Second Station - Jesus carries His cross. (John 19:13-17) + Our Father + Hail Mary + Glory Be to the Father +",
-  _3:"The Third Station - Jesus falls for the first time. (Isaiah 53:4-7) + Our Father + Hail Mary + Glory Be to the Father +",
-  _4:"The Fourth Station - Jesus meets his Mother. (Luke 2:25-40) + Our Father + Hail Mary + Glory Be to the Father +",
-  _5:"The Fifth Station - Simon of Cyrene helps Jesus. (Mark 15:21) + Our Father + Hail Mary + Glory Be to the Father +",
-  _6:"The Sixth Station - Veronica wipes the face of Jesus. (Matthew 25:40) + Our Father + Hail Mary + Glory Be to the Father +",                  
-  _7:"The Seventh Station - Jesus falls the second time. (Psalm 38:6-22) + Our Father + Hail Mary + Glory Be to the Father +",
-  _8:"The Eighth Station - Jesus consoles the women of Jerusalem. (Luke 23:27-31) + Our Father + Hail Mary + Glory Be to the Father +",
-  _9:"The Ninth Station - Jesus falls the third time. (Psalm 37:23-24) + Our Father + Hail Mary + Glory Be to the Father +",
-  _10:"The Tenth Station - Jesus is stripped of his garments. (John 19:23-24) + Our Father + Hail Mary + Glory Be to the Father +",
-  _11:"The Eleventh Station - Jesus is nailed to the Cross. (Luke 23:33-43) + Our Father + Hail Mary + Glory Be to the Father +",
-  _12:"The Twelfth Station - Jesus dies on the Cross. (John 19:28-37) + Our Father + Hail Mary + Glory Be to the Father +",
-  _13:"The Thirteenth Station - Jesus is taken down from the Cross. (John 19:38-40) + Our Father + Hail Mary + Glory Be to the Father +",
-  _14:"The Fourteenth Station - Jesus is laid in the Tomb. (Matthew 27:57-61) + Our Father + Hail Mary + Glory Be to the Father +",
-  _15:"This was the traditional Stations of the Cross, there is an alternative offered by Saint Pope John Paul II."
+  s0: "Begin with the Sign of the Cross and by reciting the Act of Contrition",
+  s1:"The First Station - Jesus is condemned to death. (Mark 15:1-15) + Our Father + Hail Mary + Glory Be to the Father +",
+  s2:"The Second Station - Jesus carries His cross. (John 19:13-17) + Our Father + Hail Mary + Glory Be to the Father +",
+  s3:"The Third Station - Jesus falls for the first time. (Isaiah 53:4-7) + Our Father + Hail Mary + Glory Be to the Father +",
+  s4:"The Fourth Station - Jesus meets his Mother. (Luke 2:25-40) + Our Father + Hail Mary + Glory Be to the Father +",
+  s5:"The Fifth Station - Simon of Cyrene helps Jesus. (Mark 15:21) + Our Father + Hail Mary + Glory Be to the Father +",
+  s6:"The Sixth Station - Veronica wipes the face of Jesus. (Matthew 25:40) + Our Father + Hail Mary + Glory Be to the Father +",                  
+  s7:"The Seventh Station - Jesus falls the second time. (Psalm 38:6-22) + Our Father + Hail Mary + Glory Be to the Father +",
+  s8:"The Eighth Station - Jesus consoles the women of Jerusalem. (Luke 23:27-31) + Our Father + Hail Mary + Glory Be to the Father +",
+  s9:"The Ninth Station - Jesus falls the third time. (Psalm 37:23-24) + Our Father + Hail Mary + Glory Be to the Father +",
+  s10:"The Tenth Station - Jesus is stripped of his garments. (John 19:23-24) + Our Father + Hail Mary + Glory Be to the Father +",
+  s11:"The Eleventh Station - Jesus is nailed to the Cross. (Luke 23:33-43) + Our Father + Hail Mary + Glory Be to the Father +",
+  s12:"The Twelfth Station - Jesus dies on the Cross. (John 19:28-37) + Our Father + Hail Mary + Glory Be to the Father +",
+  s13:"The Thirteenth Station - Jesus is taken down from the Cross. (John 19:38-40) + Our Father + Hail Mary + Glory Be to the Father +",
+  s14:"The Fourteenth Station - Jesus is laid in the Tomb. (Matthew 27:57-61) + Our Father + Hail Mary + Glory Be to the Father +",
+  s15:"This was the traditional Stations of the Cross, there is an alternative offered by Saint Pope John Paul II."
   };
 
 var stations = new UI.Window({ 
@@ -540,7 +675,7 @@ var printStations = new UI.Text({
   position: new Vector2(0, 30),
   size: new Vector2(144, 1695),
   font: 'gothic-18',
-  text: allStations.join(""),
+  text: allStations.s0,
   textAlign: 'center',
   color: 'black'
 });
@@ -636,7 +771,7 @@ var mainMenu = new UI.Menu({
   mainMenu.on('select', function(e) {
    switch(e.itemIndex) {
       case 0: rosary.show(); break;
-      case 1: prayers.show(); break;
+      case 1: prayerMenu.show(); break;
       case 2: confession.show(); break;
       case 3: stations.show(); break;
       case 4: chaplet.show(); break;
