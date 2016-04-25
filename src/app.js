@@ -817,20 +817,6 @@ stations.add(station14);
 stations.add(stationEnd);
 
 //  ++ CHAPLET SCREEN START++
-var chapletPrayers = ["Using a Rosary starting with the Crucifix: Make the sign of the cross.\n\n",
-                      "First Large Bead:\n",
-                      "You expired, Jesus, but the source of life gushed forth for souls, and the ocean of mercy opened up for the whole world. O Fount of Life, unfathomable Divine Mercy, envelop the whole world and empty Yourself out upon us. \n\n",
-                      "Next Three Small Beads: + Our Father + Hail Mary + Apostles' Creed + \n\n",
-                      "The second large bead and all after, pray The Eternal Father prayer:\n",
-                      "Eternal Father, I offer you the Body and Blood, Soul and Divinity of Your Dearly Beloved Son, Our Lord, Jesus Christ, in atonement for our sins and those of the whole world.\n\n",
-                      "On the 10 small decade beads pray: For the sake of His sorrowful Passion, have mercy on us and on the whole world.\n\n",
-                      "Conclude at the medalion by praying: (x3) Holy God, Holy Mighty One, Holy Immortal One, have mercy on us and on the whole world.\n\n",
-                      "Concluding Prayer (optional):\n",
-                      "Eternal God, in whom mercy is endless and the treasury of compassion, inexhaustible, look kindly upon us and increase Your mercy in us,",
-                      "that in difficult moments we might not despair nor become despondent, but with great confidence submit ourselves to Your holy will, which is Love and Mercy itself."
-                     ];
-
-//  ++ CHAPLET SCREEN START++
 var chaplet = new UI.Window({ 
   fullscreen: true, 
   backgroundColor: 'white', 
