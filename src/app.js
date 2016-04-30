@@ -1,6 +1,6 @@
 // CATHORIST PEBBLE APP BY JASON HERFORTH
 // 2016
-// V1.3
+// V1.4
 
 //LET'S GET THIS PARTY STARTED
 var UI = require('ui');
@@ -403,23 +403,30 @@ var allPrayers = {
   "prayer": [
     {
      "title": "Our Father",
-     "prayer": ["Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who ",
-                "trespass against us and lead us not into temptation, but deliver us from evil. Amen."
-               ]
+     "text": ["Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who ",
+                "trespass against us and lead us not into temptation, but deliver us from evil. Amen."]
     },
     {  
      "title": "Hail Mary",
-     "prayer": "Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen."
+      "text": ["Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. ",
+             "Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen."]
     },
     {
      "title": "Glory Be",
-     "prayer": "Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, is now, and ever shall be, world without end. Amen."
+      "text": ["Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, ",
+               "is now, and ever shall be, world without end. Amen."]
     },
     {
      "title": "Apostles' Creed",
-     "prayer": ["I believe in God, the Father almighty, creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was ",
+     "text": ["I believe in God, the Father almighty, creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was ",
                 "crucified, died, and was buried. He descended into hell; the third day he rose again from the dead; he ascended into heaven and is seated at the right hand of the Father; from thence he shall come to judge the",
                 "living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen."]
+    },
+    {
+     "title": "Anima Christi",
+     "text": ["Soul of Christ, sanctify me. Body of Christ, save me. Blood of Christ, inebriate me. Water from Christ's side, wash me. Passion of Christ, strengthen me. O good Jesus, hear me. Within Thy wounds hide me. ",
+              " Suffer me not to be separated from Thee. From the malicious enemy defend me. In the hour of my death call me, And bid me come unto Thee. That I may praise Thee with Thy saints and with Thy angels. ",
+              "Forever and ever, Amen"]
     }
   ]
 };
@@ -450,7 +457,7 @@ var printPrayers0 = new UI.Text({
  position: new Vector2(0, 40),
  size: new Vector2(144, 1200),
  font: 'gothic-18',
- text: allPrayers.prayer[0].prayer.join(""),
+ text: allPrayers.prayer[0].text.join(""),
  textAlign: 'center',
  color: '#000000'
 });
@@ -485,7 +492,7 @@ var printPrayers1 = new UI.Text({
  position: new Vector2(0, 40),
  size: new Vector2(144, 1200),
  font: 'gothic-18',
- text: allPrayers.prayer[1].prayer,
+ text: allPrayers.prayer[1].text.join(""),
  textAlign: 'center',
  color: '#000000'
 });
@@ -520,7 +527,7 @@ var printPrayers2 = new UI.Text({
  position: new Vector2(0, 40),
  size: new Vector2(144, 1200),
  font: 'gothic-18',
- text: allPrayers.prayer[2].prayer,
+ text: allPrayers.prayer[2].text.join(""),
  textAlign: 'center',
  color: '#000000'
 });
@@ -555,7 +562,7 @@ var printPrayers3 = new UI.Text({
  position: new Vector2(0, 40),
  size: new Vector2(144, 1200),
  font: 'gothic-18',
- text: allPrayers.prayer[3].prayer.join(""),
+ text: allPrayers.prayer[3].text.join(""),
  textAlign: 'center',
  color: '#000000'
 });
@@ -564,23 +571,68 @@ prayer3.add(titeHeaderBG3);
 prayer3.add(prayersTitle3);
 prayer3.add(printPrayers3);
 
+var prayer4 = new UI.Window({ 
+  fullscreen: true, 
+  backgroundColor: '#FFFFFF', 
+  scrollable: true
+  });
+
+// PRAYERS TITLE
+var prayersTitle4 = new UI.Text({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 168),
+  font: 'gothic-24-bold',
+  text: allPrayers.prayer[4].title,
+  textAlign: 'center',
+  color: '#FFFFFF'
+});
+
+var titeHeaderBG4 = new UI.Rect({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 35),
+  backgroundColor: '#0000AA'
+});
+
+var printPrayers4 = new UI.Text({
+ position: new Vector2(0, 40),
+ size: new Vector2(144, 1200),
+ font: 'gothic-18',
+ text: allPrayers.prayer[4].text.join(""),
+ textAlign: 'center',
+ color: '#000000'
+});
+
+prayer4.add(titeHeaderBG4);
+prayer4.add(prayersTitle4);
+prayer4.add(printPrayers4);
+
 var prayerMenu = new UI.Menu({
   backgroundColor: '#0055AA',
   textColor: 'white',
   highlightBackgroundColor: '#000000',
   highlightTextColor: 'white',
   sections: [{
+    title: 'Essential Prayers',
     items: [
       { title: 'Our Father' }, 
       { title: 'Hail Mary' },
       { title: 'Glory Be' },
       { title: 'Apostle\'s Creed' }]
+    },
+    {
+    title: 'Eucharistic Prayers',
+    items: [
+      { title: 'Anima Christi' }]
     }]
   });
 
   prayerMenu.on('select', function(e){
     switch(e.itemIndex) {
-      case 0: prayer0.show(); break;
+      case 0: if(e.sectionIndex === 0){
+        prayer0.show();
+      } else { 
+        prayer4.show(); 
+      } break;
       case 1: prayer1.show(); break;
       case 2: prayer2.show(); break;
       case 3: prayer3.show(); break;
