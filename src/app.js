@@ -404,29 +404,39 @@ var allPrayers = {
     {
      "title": "Our Father",
      "text": ["Our Father, who art in heaven, hallowed be thy name; thy kingdom come, thy will be done, on earth as it is in heaven. Give us this day our daily bread and forgive us our trespasses, as we forgive those who ",
-                "trespass against us and lead us not into temptation, but deliver us from evil. Amen."]
+             "trespass against us and lead us not into temptation, but deliver us from evil. Amen. \n\n",
+             "Pater Noster, qui es in caelis, sanctificetur nomen tuum. Adveniat regnum tuum. Fiat voluntas tua, sicut in caelo et in terra. Panem nostrum quotidianum da nobis hodie, ",
+             "et dimitte nobis debita nostra sicut et nos dimittimus debitoribus nostris. Et ne nos inducas in tentationem, sed libera nos a malo. Amen."]
     },
     {  
      "title": "Hail Mary",
-      "text": ["Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. ",
-             "Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen."]
+     "text": ["Hail Mary, full of grace, the Lord is with thee. Blessed art thou among women and blessed is the fruit of thy womb, Jesus. ",
+              "Holy Mary, mother of God, pray for us sinners now and at the hour of our death. Amen. \n\n",
+              "Ave Maria, gratia plena, Dominus tecum. Benedicta tu in mulieribus, et benedictus fructus ventris tui, Iesus. Sancta Maria, Mater Dei, ora pro nobis peccatoribus, nunc, et in hora mortis nostrae. Amen."]
     },
     {
      "title": "Glory Be",
-      "text": ["Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, ",
-               "is now, and ever shall be, world without end. Amen."]
+     "text": ["Glory be to the Father, and to the Son, and to the Holy Spirit. As it was in the beginning, ",
+              "is now, and ever shall be, world without end. Amen. \n\n",
+              "Gloria Patri, et Filio, et Spiritui Sancto. Sicut erat in principio, et nunc, et semper, et in saecula saeculorum. Amen."]
     },
     {
      "title": "Apostles' Creed",
      "text": ["I believe in God, the Father almighty, creator of heaven and earth, and in Jesus Christ, his only Son, our Lord, who was conceived by the Holy Spirit, born of the Virgin Mary, suffered under Pontius Pilate, was ",
-                "crucified, died, and was buried. He descended into hell; the third day he rose again from the dead; he ascended into heaven and is seated at the right hand of the Father; from thence he shall come to judge the",
-                "living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen."]
+             "crucified, died, and was buried. He descended into hell; the third day he rose again from the dead; he ascended into heaven and is seated at the right hand of the Father; from thence he shall come to judge the",
+             "living and the dead. I believe in the Holy Spirit, the holy Catholic Church, the communion of saints, the forgiveness of sins, the resurrection of the body, and life everlasting. Amen."]
     },
     {
      "title": "Anima Christi",
      "text": ["Soul of Christ, sanctify me. Body of Christ, save me. Blood of Christ, inebriate me. Water from Christ's side, wash me. Passion of Christ, strengthen me. O good Jesus, hear me. Within Thy wounds hide me. ",
-              " Suffer me not to be separated from Thee. From the malicious enemy defend me. In the hour of my death call me, And bid me come unto Thee. That I may praise Thee with Thy saints and with Thy angels. ",
-              "Forever and ever, Amen"]
+             " Suffer me not to be separated from Thee. From the malicious enemy defend me. In the hour of my death call me, And bid me come unto Thee. That I may praise Thee with Thy saints and with Thy angels. ",
+             "Forever and ever, Amen"]
+    },
+    {
+     "title": "Trium Puerorum",
+     "text": ["All things the Lord has made, bless the Lord. Angels of the Lord! all bless the Lord. Sun and moon! bless the Lord. Stars of heaven! bless the Lord. Showers and dews! all bless the Lord. Winds! all bless the Lord. ",
+             "Fire and heat! bless the Lord. Dews and sleet! bless the Lord. Light and darkness! bless the Lord. Lightning and clouds! bless the Lord. Mountains and hills! bless the Lord. Every thing that grows on the earth! ",
+             "bless the Lord. Let us praise and exalt him above all for ever. Amen "]
     }
   ]
 };
@@ -606,6 +616,41 @@ prayer4.add(titeHeaderBG4);
 prayer4.add(prayersTitle4);
 prayer4.add(printPrayers4);
 
+var prayer5 = new UI.Window({ 
+  fullscreen: true, 
+  backgroundColor: '#FFFFFF', 
+  scrollable: true
+  });
+
+// PRAYERS TITLE
+var prayersTitle5 = new UI.Text({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 168),
+  font: 'gothic-24-bold',
+  text: allPrayers.prayer[5].title,
+  textAlign: 'center',
+  color: '#FFFFFF'
+});
+
+var titeHeaderBG5 = new UI.Rect({
+  position: new Vector2(0, 0),
+  size: new Vector2(144, 35),
+  backgroundColor: '#0000AA'
+});
+
+var printPrayers5 = new UI.Text({
+ position: new Vector2(0, 40),
+ size: new Vector2(144, 1200),
+ font: 'gothic-18',
+ text: allPrayers.prayer[5].text.join(""),
+ textAlign: 'center',
+ color: '#000000'
+});
+
+prayer5.add(titeHeaderBG5);
+prayer5.add(prayersTitle5);
+prayer5.add(printPrayers5);
+
 var prayerMenu = new UI.Menu({
   backgroundColor: '#0055AA',
   textColor: 'white',
@@ -622,18 +667,23 @@ var prayerMenu = new UI.Menu({
     {
     title: 'Eucharistic Prayers',
     items: [
-      { title: 'Anima Christi' }]
+      { title: 'Anima Christi' },
+      { title: 'Trium Puerorum'}]
     }]
   });
 
   prayerMenu.on('select', function(e){
     switch(e.itemIndex) {
       case 0: if(e.sectionIndex === 0){
-        prayer0.show();
-      } else { 
-        prayer4.show(); 
-      } break;
-      case 1: prayer1.show(); break;
+              prayer0.show();
+            } else { 
+              prayer4.show(); 
+            } break;
+      case 1:  if(e.sectionIndex === 0){
+              prayer1.show();
+            } else { 
+              prayer5.show(); 
+            } break;
       case 2: prayer2.show(); break;
       case 3: prayer3.show(); break;
       default: 
@@ -1012,11 +1062,6 @@ var about = new UI.Card({
   scrollable: true
 });
 
-about.on('click','back',function(){
-      about.hide();
-      splashScreen.show();
-    });
-
 //  ++  MAIN MENU SCREEN START ++
 splashScreen.on('click', 'select', function(e) {
 
@@ -1039,6 +1084,11 @@ var mainMenu = new UI.Menu({
 
   mainMenu.show();
   splashScreen.hide();
+
+  about.on('click','back',function(){
+      about.hide();
+      mainMenu.show();
+    });
   
   mainMenu.on('select', function(e) {
    switch(e.itemIndex) {
