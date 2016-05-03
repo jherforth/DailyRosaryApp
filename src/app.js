@@ -399,6 +399,7 @@ rosary.add(dailyRosary);
 rosary.add(meditations);
 
 //  ++ PRAYERS SCREEN START ++
+var getPrayer;
 var allPrayers = {
   "prayer": [
     {
@@ -441,216 +442,6 @@ var allPrayers = {
   ]
 };
 
-var prayer0 = new UI.Window({ 
-  fullscreen: true, 
-  backgroundColor: '#FFFFFF', 
-  scrollable: true
-  });
-
-// PRAYERS TITLE
-var prayersTitle0 = new UI.Text({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 168),
-  font: 'gothic-24-bold',
-  text: allPrayers.prayer[0].title,
-  textAlign: 'center',
-  color: '#FFFFFF'
-});
-
-var titeHeaderBG0 = new UI.Rect({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 35),
-  backgroundColor: '#0000AA'
-});
-
-var printPrayers0 = new UI.Text({
- position: new Vector2(0, 40),
- size: new Vector2(144, 1200),
- font: 'gothic-18',
- text: allPrayers.prayer[0].text.join(""),
- textAlign: 'center',
- color: '#000000'
-});
-
-prayer0.add(titeHeaderBG0);
-prayer0.add(prayersTitle0);
-prayer0.add(printPrayers0);
-
-var prayer1 = new UI.Window({ 
-  fullscreen: true, 
-  backgroundColor: '#FFFFFF', 
-  scrollable: true
-  });
-
-// PRAYERS TITLE
-var prayersTitle1 = new UI.Text({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 168),
-  font: 'gothic-24-bold',
-  text: allPrayers.prayer[1].title,
-  textAlign: 'center',
-  color: '#FFFFFF'
-});
-
-var titeHeaderBG1 = new UI.Rect({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 35),
-  backgroundColor: '#0000AA'
-});
-
-var printPrayers1 = new UI.Text({
- position: new Vector2(0, 40),
- size: new Vector2(144, 1200),
- font: 'gothic-18',
- text: allPrayers.prayer[1].text.join(""),
- textAlign: 'center',
- color: '#000000'
-});
-
-prayer1.add(titeHeaderBG1);
-prayer1.add(prayersTitle1);
-prayer1.add(printPrayers1);
-
-var prayer2 = new UI.Window({ 
-  fullscreen: true, 
-  backgroundColor: '#FFFFFF', 
-  scrollable: true
-  });
-
-// PRAYERS TITLE
-var prayersTitle2 = new UI.Text({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 168),
-  font: 'gothic-24-bold',
-  text: allPrayers.prayer[2].title,
-  textAlign: 'center',
-  color: '#FFFFFF'
-});
-
-var titeHeaderBG2 = new UI.Rect({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 35),
-  backgroundColor: '#0000AA'
-});
-
-var printPrayers2 = new UI.Text({
- position: new Vector2(0, 40),
- size: new Vector2(144, 1200),
- font: 'gothic-18',
- text: allPrayers.prayer[2].text.join(""),
- textAlign: 'center',
- color: '#000000'
-});
-
-prayer2.add(titeHeaderBG2);
-prayer2.add(prayersTitle2);
-prayer2.add(printPrayers2);
-
-var prayer3 = new UI.Window({ 
-  fullscreen: true, 
-  backgroundColor: '#FFFFFF', 
-  scrollable: true
-  });
-
-// PRAYERS TITLE
-var prayersTitle3 = new UI.Text({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 168),
-  font: 'gothic-24-bold',
-  text: allPrayers.prayer[3].title,
-  textAlign: 'center',
-  color: '#FFFFFF'
-});
-
-var titeHeaderBG3 = new UI.Rect({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 35),
-  backgroundColor: '#0000AA'
-});
-
-var printPrayers3 = new UI.Text({
- position: new Vector2(0, 40),
- size: new Vector2(144, 1200),
- font: 'gothic-18',
- text: allPrayers.prayer[3].text.join(""),
- textAlign: 'center',
- color: '#000000'
-});
-
-prayer3.add(titeHeaderBG3);
-prayer3.add(prayersTitle3);
-prayer3.add(printPrayers3);
-
-var prayer4 = new UI.Window({ 
-  fullscreen: true, 
-  backgroundColor: '#FFFFFF', 
-  scrollable: true
-  });
-
-// PRAYERS TITLE
-var prayersTitle4 = new UI.Text({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 168),
-  font: 'gothic-24-bold',
-  text: allPrayers.prayer[4].title,
-  textAlign: 'center',
-  color: '#FFFFFF'
-});
-
-var titeHeaderBG4 = new UI.Rect({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 35),
-  backgroundColor: '#0000AA'
-});
-
-var printPrayers4 = new UI.Text({
- position: new Vector2(0, 40),
- size: new Vector2(144, 1200),
- font: 'gothic-18',
- text: allPrayers.prayer[4].text.join(""),
- textAlign: 'center',
- color: '#000000'
-});
-
-prayer4.add(titeHeaderBG4);
-prayer4.add(prayersTitle4);
-prayer4.add(printPrayers4);
-
-var prayer5 = new UI.Window({ 
-  fullscreen: true, 
-  backgroundColor: '#FFFFFF', 
-  scrollable: true
-  });
-
-// PRAYERS TITLE
-var prayersTitle5 = new UI.Text({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 168),
-  font: 'gothic-24-bold',
-  text: allPrayers.prayer[5].title,
-  textAlign: 'center',
-  color: '#FFFFFF'
-});
-
-var titeHeaderBG5 = new UI.Rect({
-  position: new Vector2(0, 0),
-  size: new Vector2(144, 35),
-  backgroundColor: '#0000AA'
-});
-
-var printPrayers5 = new UI.Text({
- position: new Vector2(0, 40),
- size: new Vector2(144, 1200),
- font: 'gothic-18',
- text: allPrayers.prayer[5].text.join(""),
- textAlign: 'center',
- color: '#000000'
-});
-
-prayer5.add(titeHeaderBG5);
-prayer5.add(prayersTitle5);
-prayer5.add(printPrayers5);
-
 var prayerMenu = new UI.Menu({
   backgroundColor: '#0055AA',
   textColor: 'white',
@@ -673,23 +464,57 @@ var prayerMenu = new UI.Menu({
   });
 
   prayerMenu.on('select', function(e){
-    switch(e.itemIndex) {
-      case 0: if(e.sectionIndex === 0){
-              prayer0.show();
-            } else { 
-              prayer4.show(); 
-            } break;
-      case 1:  if(e.sectionIndex === 0){
-              prayer1.show();
-            } else { 
-              prayer5.show(); 
-            } break;
-      case 2: prayer2.show(); break;
-      case 3: prayer3.show(); break;
+    switch(e.sectionIndex, e.itemIndex) {
+      case 0: 
+        if(e.sectionIndex === 0 && e.itemIndex === 0){getPrayer = 0; displayPrayer();} else { getPrayer = 4; displayPrayer();} break ;
+      case 1: 
+        if(e.sectionIndex === 0 && e.itemIndex === 1){getPrayer = 1; displayPrayer();} else { getPrayer = 5; displayPrayer();} break ;
+      case 2: 
+        getPrayer = 2; displayPrayer(); break;
+      case 3: 
+        getPrayer = 3; displayPrayer(); break;
       default: 
-        console.log('e.itemIndex is out of bounds: ' + e.itemIndex);
+        console.log('Item not found: ' + e.itemIndex);
     } 
   });
+
+function displayPrayer() {
+  
+  var prayer = new UI.Window({ 
+    fullscreen: true, 
+    backgroundColor: '#FFFFFF', 
+    scrollable: true
+  });
+
+  var prayersTitle = new UI.Text({
+    position: new Vector2(0, 0),
+    size: new Vector2(144, 168),
+    font: 'gothic-24-bold',
+    text: allPrayers.prayer[getPrayer].title,
+    textAlign: 'center',
+    color: '#FFFFFF'
+  });
+
+  var titeHeaderBG = new UI.Rect({
+    position: new Vector2(0, 0),
+    size: new Vector2(144, 35),
+    backgroundColor: '#0000AA'
+  });
+
+  var printPrayers = new UI.Text({
+    position: new Vector2(0, 40),
+    size: new Vector2(144, 1200),
+    font: 'gothic-18',
+    text: allPrayers.prayer[getPrayer].text.join(""),
+    textAlign: 'center',
+    color: '#000000'
+  });
+
+  prayer.add(titeHeaderBG);
+  prayer.add(prayersTitle);
+  prayer.add(printPrayers);
+  prayer.show();
+}
 
 //  ++ CONFESSION SCREEN START ++
 
