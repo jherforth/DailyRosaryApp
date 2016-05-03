@@ -49,7 +49,7 @@ var intentText = new UI.Text({
 // SET THE DATE
 var todaysDate = new Date();
 var month = todaysDate.getMonth();
-var day = todaysDate.getDate();
+// var day = todaysDate.getDate();
 var year = todaysDate.getFullYear();
 
 // JSON URL
@@ -434,10 +434,40 @@ var allPrayers = {
              "Forever and ever, Amen"]
     },
     {
-     "title": "Trium Puerorum",
-     "text": ["All things the Lord has made, bless the Lord. Angels of the Lord! all bless the Lord. Sun and moon! bless the Lord. Stars of heaven! bless the Lord. Showers and dews! all bless the Lord. Winds! all bless the Lord. ",
-             "Fire and heat! bless the Lord. Dews and sleet! bless the Lord. Light and darkness! bless the Lord. Lightning and clouds! bless the Lord. Mountains and hills! bless the Lord. Every thing that grows on the earth! ",
-             "bless the Lord. Let us praise and exalt him above all for ever. Amen "]
+     "title": "Domine Iesu Christe",
+     "text": ["O Lord Jesus Christ, Son of the living God, who according to the will of the Father, with the cooperation of the Holy Spirit, hast by Thy death given life unto the world, deliver me by Thy most sacred Body, ",
+              "which, I, unworthy, have presumed to receive, from all my iniquities and from every evil, and make me ever to hold fast to Thy commandments and suffer me never to be separated from Thee. Amen."]
+    },
+    {
+      "title": "Guardian Angel",
+      "text": ["Angel of God, my guardian dear, To whom God's love commits me here, Ever this day, ",
+               "be at my side, To light and guard, Rule and guide. Amen."]
+    },
+    {
+      "title": "Prayer to St. Michael",
+      "text": ["St. Michael the Archangel, defend us in battle. Be our defense against the wickedness and snares of the Devil. May God rebuke him, we humbly pray, and do thou, O Prince of the heavenly hosts, ",
+               "by the power of God, thrust into hell Satan, and all the evil spirits, who prowl about the world seeking the ruin of souls. Amen."]
+    },
+    {
+      "title": "The Memorare",
+      "text": ["Remember, O most gracious Virgin Mary, that never was it known that anyone who fled to thy protection, implored thy help, or sought thine intercession was left unaided. Inspired by this confidence, I fly unto thee, ",
+               "O Virgin of virgins, my mother; to thee do I come, before thee I stand, sinful and sorrowful. O Mother of the Word Incarnate, despise not my petitions, but in thy mercy hear and answer me. Amen."]
+    },
+    {
+      "title": "Salve Regina",
+      "text": ["Hail, holy Queen, mother of Mercy. Hail, our life, our sweetness and our hope. To thee do we cry, poor banished children of Eve; to thee do we send up our sighs, mourning and weeping, in this vale of tears. ",
+               "Turn then, most gracious advocate, thine eyes of mercy toward us; and after this our exile, show unto us the blessed fruit of thy womb, Jesus. O clement, O loving, O sweet virgin Mary."]
+    },
+    {
+      "title": "Prayer of St John Chrysostom",
+      "text": ["We give Thee thanks, O most merciful Lord and Redeemer of our souls, for this day Thou hast made us worthy by means of these immortal and heavenly mysteries. Direct our way; keep us in fear of Thee; guard our lives;",
+               " and make our steps firm through the prayers and intercessions of the glorious and holy Mother of God and ever-Virgin Mary. Be exalted above the heavens, O God, and above all the earth, Thy glory, now and forever",
+               " and ever. Amen."]
+    },
+    {
+      "title": "Morning Offering to the Sacred Heart",
+      "text": ["O Jesus, through the Immaculate Heart of Mary, I offer You my prayers, works, joys and sufferings of this day for all the intentions of Your Sacred Heart, in union with the Holy Sacrifice of the Mass throughout,",
+               " the world, in reparation for my sins, for the intentions of all our associates, and in particular for the intentions of our Holy Father for this month."]
     }
   ]
 };
@@ -450,29 +480,53 @@ var prayerMenu = new UI.Menu({
   sections: [{
     title: 'Essential Prayers',
     items: [
-      { title: 'Our Father' }, 
-      { title: 'Hail Mary' },
-      { title: 'Glory Be' },
+      { title: 'Our Father', subtitle: 'Pater Noster' }, 
+      { title: 'Glory Be', subtitle: 'Doxologia Minor'},
       { title: 'Apostle\'s Creed' }]
+    },
+    {
+    title: 'Marian Prayers',
+    items: [
+      { title: 'Ave Maria', subtitle: 'Hail Mary' },
+      { title: 'The Memorare' },
+      { title: 'Salve Regina', subtitle: 'Hail, Holy Queen' }]
     },
     {
     title: 'Eucharistic Prayers',
     items: [
       { title: 'Anima Christi' },
-      { title: 'Trium Puerorum'}]
+      { title: 'Domine Iesu Christe'},
+      { title: 'Prayer of St. John', subtitle: 'Chrysostom'}]
+    },
+    {
+    title: 'Misc Prayers',
+    items: [
+      { title: 'Guardian Angel', subtitle: 'Prayer' },
+      { title: 'Prayer to Saint', subtitle: 'Michael the Arcangel'},
+      { title: 'Morning Offering', subtitle: 'to the Sacred Heart'}]
     }]
   });
 
   prayerMenu.on('select', function(e){
     switch(e.sectionIndex, e.itemIndex) {
       case 0: 
-        if(e.sectionIndex === 0 && e.itemIndex === 0){getPrayer = 0; displayPrayer();} else { getPrayer = 4; displayPrayer();} break ;
+        if(e.sectionIndex === 0 && e.itemIndex === 0){getPrayer = 0; displayPrayer();} else 
+        if(e.sectionIndex === 1 && e.itemIndex === 0){getPrayer = 1; displayPrayer();} else 
+        if(e.sectionIndex === 2 && e.itemIndex === 0){getPrayer = 4; displayPrayer();} else 
+        {getPrayer = 6; displayPrayer();}
+        break ;
       case 1: 
-        if(e.sectionIndex === 0 && e.itemIndex === 1){getPrayer = 1; displayPrayer();} else { getPrayer = 5; displayPrayer();} break ;
+        if(e.sectionIndex === 0 && e.itemIndex === 1){getPrayer = 2; displayPrayer();} else 
+        if(e.sectionIndex === 1 && e.itemIndex === 1){getPrayer = 8; displayPrayer();} else
+        if(e.sectionIndex === 2 && e.itemIndex === 1){getPrayer = 5; displayPrayer();} else 
+        {getPrayer = 7; displayPrayer();}
+        break ;
       case 2: 
-        getPrayer = 2; displayPrayer(); break;
-      case 3: 
-        getPrayer = 3; displayPrayer(); break;
+        if(e.sectionIndex === 0 && e.itemIndex === 2){getPrayer = 3; displayPrayer();} else 
+        if(e.sectionIndex === 1 && e.itemIndex === 2){getPrayer = 9; displayPrayer();} else
+        if(e.sectionIndex === 2 && e.itemIndex === 2){getPrayer = 10; displayPrayer();} else
+        {getPrayer = 11; displayPrayer();}
+        break ;
       default: 
         console.log('Item not found: ' + e.itemIndex);
     } 
@@ -489,7 +543,7 @@ function displayPrayer() {
   var prayersTitle = new UI.Text({
     position: new Vector2(0, 0),
     size: new Vector2(144, 168),
-    font: 'gothic-24-bold',
+    font: 'gothic-18-bold',
     text: allPrayers.prayer[getPrayer].title,
     textAlign: 'center',
     color: '#FFFFFF'
@@ -497,12 +551,12 @@ function displayPrayer() {
 
   var titeHeaderBG = new UI.Rect({
     position: new Vector2(0, 0),
-    size: new Vector2(144, 35),
+    size: new Vector2(144, 40),
     backgroundColor: '#0000AA'
   });
 
   var printPrayers = new UI.Text({
-    position: new Vector2(0, 40),
+    position: new Vector2(0, 45),
     size: new Vector2(144, 1200),
     font: 'gothic-18',
     text: allPrayers.prayer[getPrayer].text.join(""),
