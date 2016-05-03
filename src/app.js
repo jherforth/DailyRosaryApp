@@ -439,12 +439,12 @@ var allPrayers = {
               "which, I, unworthy, have presumed to receive, from all my iniquities and from every evil, and make me ever to hold fast to Thy commandments and suffer me never to be separated from Thee. Amen."]
     },
     {
-      "title": "Guardian Angel",
+      "title": "The Guardian Angel Prayer",
       "text": ["Angel of God, my guardian dear, To whom God's love commits me here, Ever this day, ",
                "be at my side, To light and guard, Rule and guide. Amen."]
     },
     {
-      "title": "Prayer to St. Michael",
+      "title": "Prayer to St. Michael the Arcangel",
       "text": ["St. Michael the Archangel, defend us in battle. Be our defense against the wickedness and snares of the Devil. May God rebuke him, we humbly pray, and do thou, O Prince of the heavenly hosts, ",
                "by the power of God, thrust into hell Satan, and all the evil spirits, who prowl about the world seeking the ruin of souls. Amen."]
     },
@@ -473,10 +473,10 @@ var allPrayers = {
 };
 
 var prayerMenu = new UI.Menu({
-  backgroundColor: '#0055AA',
+  backgroundColor: '#000000',
   textColor: 'white',
-  highlightBackgroundColor: '#000000',
-  highlightTextColor: 'white',
+  highlightBackgroundColor: 'white',
+  highlightTextColor: 'black',
   sections: [{
     title: 'Essential Prayers',
     items: [
