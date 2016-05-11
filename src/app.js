@@ -1,6 +1,6 @@
 // CATHORIST PEBBLE APP BY JASON HERFORTH
 // 2016
-// V1.4
+// V1.5
 
 //LET'S GET THIS PARTY STARTED
 var UI = require('ui');
@@ -68,7 +68,7 @@ ajax(
     var evangelization = data.intention2;
     var text1 = data.text1[month];
     var text2 = data.text2[month];
-    var theTitle = "Pope's Montly Intentions";
+    var theTitle = "Pope's Monthly Intentions";
     
     // WAH LAH!
     intentTitle.text(theTitle);
@@ -952,7 +952,7 @@ var mainMenu = new UI.Menu({
     sections: [{
       items: [
         { title: 'The Rosary', subtitle: 'Today\'s Mysteries', icon: rosaryIMG }, 
-        { title: 'Prayers', subtitle: 'The Essentials', icon: prayersIMG },
+        { title: 'Prayers', subtitle: 'For Every Occasion', icon: prayersIMG },
         { title: 'Confession', subtitle: 'Quick Guide', icon: confessionIMG },
         { title: 'Stations of', subtitle: 'the Cross', icon: stationsIMG },
         { title: 'Divine Mercy', subtitle: 'Chaplet', icon: heartIMG },
@@ -982,4 +982,9 @@ var mainMenu = new UI.Menu({
         console.log('e.itemIndex is out of bounds: ' + e.itemIndex);
     } 
  });
+
+  mainMenu.on('click','back',function(){
+      mainMenu.hide();
+    });
+
 });
