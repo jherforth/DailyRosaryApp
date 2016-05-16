@@ -487,7 +487,7 @@ var prayerMenu = new UI.Menu({
     {
     title: 'Marian Prayers',
     items: [
-      { title: 'Ave Maria', subtitle: 'Hail Mary' },
+      { title: 'Hail Mary', subtitle: 'Ave Maria' },
       { title: 'The Memorare' },
       { title: 'Salve Regina', subtitle: 'Hail, Holy Queen' }]
     },
@@ -495,7 +495,7 @@ var prayerMenu = new UI.Menu({
     title: 'Eucharistic Prayers',
     items: [
       { title: 'Anima Christi' },
-      { title: 'Domine Iesu Christe'},
+      { title: 'Domine Iesu', subtitle:'Christe'},
       { title: 'Prayer of St. John', subtitle: 'Chrysostom'}]
     },
     {
